@@ -157,11 +157,7 @@ global $langPath;
 
                         <div class="p-tab__body">
                                 <?php if (have_posts()): ?>
-                                        <?php
-$col = isset($_GET['col']) ? intval($_GET['col']) : 2; // Default to 2 columns
-$col_class = 'p-postLayout--' . $col . 'col';
-?>
-<div class="p-postArchive03 p-postLayout__contents <?php echo $col_class; ?>">
+                                        <div class="p-postArchive03 p-postLayout__contents">
                                                 <div class="p-postLayout__head">
                                                         <p class="p-postLayout__heading">
                                                                 <?php switch ($langClass) {

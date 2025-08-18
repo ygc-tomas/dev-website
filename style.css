@@ -14,17 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   gap: 20px;
 }
 
-.p-postLayout__contents.p-postLayout--4col {
-  grid-template-columns: repeat(4, 1fr);
-}
 
-.p-postLayout__contents.p-postLayout--2col {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.p-postLayout__contents.p-postLayout--1col {
-  grid-template-columns: 1fr;
-}
 /* 列数別 */
 
 
