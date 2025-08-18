@@ -9,13 +9,13 @@ global $langPath;
                                         <?php
                                         switch ($langClass) {
                                                 case "ja":
-                                                        $cats = get_terms('document_cat');
+                                                        $cats = get_terms('download-partner_cat');
                                                         break;
                                                 case "en":
-                                                        $cats = get_terms('document-en_cat');
+                                                        $cats = get_terms('download-partner-en_cat');
                                                         break;
                                                 case "th":
-                                                        $cats = get_terms('document-th_cat');
+                                                        $cats = get_terms('download-partner-th_cat');
                                                         break;
                                         }
                                         if ($cats): ?>
@@ -40,7 +40,7 @@ global $langPath;
                                         <?php endif; ?>
 
                                         <div class="p-postSort__search">
-                                                <form action="<?php echo get_post_type_archive_link('download-partner'); ?>" method="get">
+                                                <form action="<?php echo $langPath; ?>/download-partner" method="get">
                                                         <?php switch ($langClass) {
                                                                 case 'ja': ?>
                                                                         <input type="text" name="s" placeholder="キーワードから探す">
@@ -107,8 +107,8 @@ global $langPath;
                                         <?php endif; ?>
                                         <div class="p-postSort02__item">
                                                 <div class="p-postSort02__search">
-                                                        <form action="<?php echo get_post_type_archive_link('download-partner'); ?>" method="get">
-                                                                <?php switch ($langClass) {
+                                                        <form action="<?php echo $langPath; ?>/download-partner" method="get">
+                                                                        <?php switch ($langClass) {
                                                                         case 'ja': ?>
                                                                                 <input type="text" name="s" placeholder="キーワードから探す">
                                                                         <?php break;
