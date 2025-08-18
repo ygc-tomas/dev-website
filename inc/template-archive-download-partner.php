@@ -248,7 +248,7 @@ global $langPath;
                                                                 </div>
                                                         <?php endif; ?>
                                                 </div>
-                                                <div class="p-postArchive03 p-postLayout__contents">
+                                                <?php\n$col = isset($_GET['col']) ? $_GET['col'] : 2; // Default to 2 columns\n$col_class = ($col == 4) ? ' p-postArchive03--col4' : ' p-postArchive03--col2';\n?>\n<div class="p-postArchive03 p-postLayout__contents<?php echo $col_class; ?>" data-col="<?php echo $col; ?>">
                                                         <?php while (have_posts()): the_post(); ?>
                                                                 <a href="<?php the_permalink(); ?>" class="p-postCard">
                                                                         <div class="p-postCard__thumbnail">
