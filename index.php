@@ -1,4 +1,8 @@
 <?php
+if (home_url() === "<?php echo (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" && !isset($langClass)) {
+        header("Location: /");
+        exit();
+}
 if (is_tax('case-study_cat') || is_tax('case-study_challenges') || get_post_type('case-study')) :
         include(TEMPLATEPATH . '/archive-case-study.php');
         exit;
