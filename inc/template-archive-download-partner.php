@@ -284,16 +284,6 @@ global $langPath;
                                                                                         <?php the_title(); ?>
                                                                                 </h3>
                                                                                 <p class="p-postCard__text">
-                                                                                        <?php
-                                                                                        if (mb_strlen($post->post_content, 'UTF-8') > 180) {
-                                                                                                $content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 180, 'UTF-8'));
-                                                                                                echo $content . '…';
-                                                                                        } else {
-                                                                                                echo str_replace('\n', '', strip_tags($post->post_content));
-                                                                                        }
-                                                                                        ?>
-                                                                                </p>
-
                                                                                 <!-- PDFダウンロードボタン追加 -->
                                                                                 <?php if ( get_post_meta( get_the_ID(), 'cf_file', true ) ) : ?> 
                                                                                         <a href="<?php echo esc_url( get_permalink() . '' ); ?>" class="download-button">
@@ -312,6 +302,8 @@ global $langPath;
                                                                                         PowerPointファイルをダウンロード
                                                                                 </a>
                                                                                 <?php endif; ?>
+                                                                                </p>
+
                                                                         </div>
                                                                 </a>
                                                         <?php endwhile; ?>
