@@ -40,7 +40,7 @@ global $langPath;
                                         <?php endif; ?>
 
                                         <div class="p-postSort__search">
-                                                <form action="<?php echo $langPath; ?>/document" method="get">
+                                                <form action="<?php echo get_post_type_archive_link('download-partner'); ?>" method="get">
                                                         <?php switch ($langClass) {
                                                                 case 'ja': ?>
                                                                         <input type="text" name="s" placeholder="キーワードから探す">
@@ -107,7 +107,7 @@ global $langPath;
                                         <?php endif; ?>
                                         <div class="p-postSort02__item">
                                                 <div class="p-postSort02__search">
-                                                        <form action="<?php echo $langPath; ?>/document" method="get">
+                                                        <form action="<?php echo get_post_type_archive_link('download-partner'); ?>" method="get">
                                                                 <?php switch ($langClass) {
                                                                         case 'ja': ?>
                                                                                 <input type="text" name="s" placeholder="キーワードから探す">
