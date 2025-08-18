@@ -197,17 +197,16 @@ global $langPath;
                                                         <?php
                                                         switch ($langClass) {
                                                                 case "ja":
-                                                                        $langTax = 'document_lang';
-                                                                        $postType = 'document';
+                                                                        $langTax = 'download-partner_lang';
+                                                                        $postType = 'download-partner';
                                                                         break;
                                                                 case "en":
-                                                                        $langTax = 'document-en_lang';
-                                                                        $postType = 'document-en';
-                                                                        break;
+                                                                        $langTax = 'download-partner-en_lang';
+                                                                        $postType = 'download-partner-en';
                                                                         break;
                                                                 case "th":
-                                                                        $langTax = 'document-th_lang';
-                                                                        $postType = 'document-th';
+                                                                        $langTax = 'download-partner-th_lang';
+                                                                        $postType = 'download-partner-th';
                                                                         break;
                                                         }
                                                         $langTerms = get_terms($langTax);
@@ -230,7 +229,7 @@ global $langPath;
 
                                                                         <ul class="p-postLayout__select__list">
                                                                                 <li class="p-postLayout__select__list__item">
-                                                                                        <a href="<?php echo $langPath; ?>/document">
+                                                                                        <a href="<?php echo $langPath; ?>/download-partner">
                                                                                                 ALL
                                                                                         </a>
                                                                                 </li>
@@ -263,13 +262,13 @@ global $langPath;
                                                                                 <?php
                                                                                 switch ($langClass) {
                                                                                         case "ja":
-                                                                                                $cats = get_the_terms($post->ID, 'document_cat');
+                                                                                                $cats = get_the_terms($post->ID, 'download-partner_cat');
                                                                                                 break;
                                                                                         case "en":
-                                                                                                $cats = get_the_terms($post->ID, 'document-en_cat');
+                                                                                                $cats = get_the_terms($post->ID, 'download-partner-en_cat');
                                                                                                 break;
                                                                                         case "th":
-                                                                                                $cats = get_the_terms($post->ID, 'document-th_cat');
+                                                                                                $cats = get_the_terms($post->ID, 'download-f-th_cat');
                                                                                                 break;
                                                                                 }
                                                                                 if ($cats): ?>
