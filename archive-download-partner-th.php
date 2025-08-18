@@ -1,5 +1,5 @@
 <?php global $langClass;
-$langClass = "ja"; ?>
+$langClass = "th"; ?>
 <?php global $langPath;
 $langPath = home_url(); ?>
 <?php get_header(); ?>
