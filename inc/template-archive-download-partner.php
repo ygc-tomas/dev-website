@@ -272,7 +272,16 @@ global $langPath;
                                                                                                 break;
                                                                                 }
                                                                                 if ($cats): ?>
-                                                                                        <ul class="p-postCard__category --noMt">
+                                                                                        <ul class="p-postCard__category --noMt hide-categories">
+<?php
+$pdf_link = get_post_meta(get_the_ID(), 'pdf_download_link', true);
+if ($pdf_link) : ?>
+    <ul class="p-postCard__category --noMt pdf-download-buttons">
+        <li class="p-postCard__category__item">
+            <a href="<?php echo esc_url($pdf_link); ?>" class="p-postSort__category__link" target="_blank">Download PDF</a>
+        </li>
+    </ul>
+<?php endif; ?>
                                                                                                 <?php foreach ($cats as $cat): ?>
                                                                                                         <li class="p-postCard__category__item">
                                                                                                                 <?php echo $cat->name; ?>
