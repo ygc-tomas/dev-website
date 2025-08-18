@@ -1,0 +1,84 @@
+@use "../variable" as v;
+
+/* ---------------------------
+l-wrap
+--------------------------- */
+.l-wrap {
+	position: relative;
+	width: 100%;
+
+	@include v.mq(lpt) {
+		max-width: calc(1320px + 80px);
+		margin: 0 auto;
+		padding: 0 40px;
+	}
+
+	@include v.mq(ts) {}
+
+	&--800 {
+		width: 100%;
+
+		@include v.mq(lpt) {
+			max-width: calc(800px + 80px);
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		@include v.mq(s) {}
+	}
+
+	&--1040 {
+		width: 100%;
+
+		@include v.mq(lpt) {
+			max-width: calc(1040px + 80px);
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		@include v.mq(s) {}
+	}
+
+	&--1100 {
+		width: 100%;
+
+		@include v.mq(lpt) {
+			max-width: calc(1100px + 80px);
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		@include v.mq(s) {}
+	}
+
+	&--1400 {
+		width: 100%;
+
+		@include v.mq(lpt) {
+			max-width: calc(1400px + 80px);
+			margin: 0 auto;
+			padding: 0 40px;
+		}
+
+		@include v.mq(s) {}
+	}
+
+	&--sp {
+		@include v.mq(lpt) {}
+
+		@include v.mq(s) {
+			width: 100%;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		&--20 {
+			@include v.mq(lpt) {}
+
+			@include v.mq(s) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+		}
+	}
+}

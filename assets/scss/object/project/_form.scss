@@ -1,0 +1,357 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+form
+--------------------------- */
+
+.p-form {
+	&__list {
+		display: flex;
+		flex-direction: column;
+
+		@include v.mq(lpt) {
+			gap: 38px;
+		}
+
+		@include v.mq(s) {
+			gap: 24px;
+		}
+
+		dl {
+			display: flex;
+
+			@include v.mq(lpt) {
+				justify-content: space-between;
+			}
+
+			@include v.mq(s) {
+				flex-direction: column;
+				gap: 6px;
+			}
+
+			dt {
+				line-height: 1.5;
+				font-weight: 600;
+
+				@include v.mq(lpt) {
+					width: 220px;
+					margin-right: 20px;
+					padding-top: 20px;
+				}
+
+				@include v.mq(s) {}
+
+				.--small & {
+					@include v.mq(lpt) {
+						width: 140px;
+					}
+
+					@include v.mq(s) {}
+				}
+
+				&.req {
+					&::after {
+						content: "*";
+						color: #E55457;
+					}
+				}
+			}
+
+			dd {
+				flex: 1;
+
+				@include v.mq(lpt) {
+					// width: calc(600 / 840 * 100%);
+				}
+
+				@include v.mq(s) {}
+
+				input,
+				textarea {
+					.--ja & {
+						@include v.ja();
+					}
+
+					.--en & {
+						@include v.en();
+					}
+
+					.--th & {
+						@include v.th();
+					}
+
+					font-size: 1rem;
+					width: 100%;
+					border: none;
+					background-color: rgba(v.$c-tertiary, 0.1);
+					border-radius: 5px;
+
+					@include v.mq(lpt) {
+						padding: 18px 32px;
+					}
+
+					@include v.mq(s) {
+						padding: 10px 16px;
+					}
+				}
+
+				textarea {
+					@include v.mq(lpt) {
+						margin-top: 20px;
+					}
+
+					@include v.mq(s) {}
+				}
+
+				.wpcf7-form-control-wrap {
+					display: block;
+
+					@include v.mq(lpt) {}
+
+					@include v.mq(s) {}
+
+					.wpcf7-radio,
+					.wpcf7-acceptance {
+						display: flex;
+						flex-direction: column;
+
+						@include v.mq(lpt) {
+							gap: 12px;
+							padding-top: 20px;
+						}
+
+						@include v.mq(s) {
+							gap: 8px;
+
+						}
+
+						.wpcf7-list-item {
+							margin: 0;
+
+							label {
+								position: relative;
+
+								input {
+									opacity: 0;
+									position: absolute;
+									z-index: -1;
+									width: 1px;
+									height: 1px;
+
+									&:checked {
+										+.wpcf7-list-item-label {
+
+											&::after {
+												display: block;
+											}
+										}
+									}
+								}
+
+								.wpcf7-list-item-label {
+									position: relative;
+									cursor: pointer;
+
+									@include v.mq(lpt) {
+										padding-left: 46px;
+									}
+
+									@include v.mq(s) {
+										padding-left: 28px;
+									}
+
+									&::before {
+										content: "";
+										display: block;
+										position: absolute;
+										border: 1px solid #708AA6;
+										background-color: #E6EAEE;
+										border-radius: 5px;
+
+										@include v.mq(lpt) {
+											width: 22px;
+											height: 22px;
+											top: 0;
+											left: 3px;
+										}
+
+										@include v.mq(s) {
+											width: 16px;
+											height: 16px;
+											top: 0;
+											left: 0;
+										}
+									}
+
+									&::after {
+										content: "";
+										display: none;
+										position: absolute;
+										background-image: url(../images/common/icon_check_01.svg);
+										background-repeat: no-repeat;
+
+										@include v.mq(lpt) {
+											width: 22px;
+											height: 22px;
+											top: 0;
+											left: 3px;
+											background-size: 15px auto;
+											background-position: calc(50% + 2px);
+
+										}
+
+										@include v.mq(s) {
+											width: 16px;
+											height: 16px;
+											top: 0;
+											left: 0;
+											background-size: 10px auto;
+											background-position: calc(50% + 2px);
+										}
+									}
+								}
+							}
+						}
+					}
+
+					.wpcf7-select {
+						.--ja & {
+							@include v.ja();
+						}
+
+						.--en & {
+							@include v.en();
+						}
+
+						.--th & {
+							@include v.th();
+						}
+
+						font-size: 1rem;
+						width: 100%;
+						font-weight: 600;
+						border: none;
+						background-color: rgba(v.$c-tertiary, 0.1);
+						border-radius: 5px;
+
+						@include v.mq(lpt) {
+							padding: 18px 32px;
+						}
+
+						@include v.mq(s) {
+							padding: 10px 16px;
+						}
+					}
+
+
+				}
+			}
+		}
+	}
+
+	&__button {
+		position: relative;
+		width: fit-content;
+
+		@include v.mq(lpt) {
+			margin: 80px auto 0;
+		}
+
+		@include v.mq(s) {
+			margin: 48px auto 0;
+		}
+
+		.wpcf7-spinner {
+			position: absolute;
+			top: 50%;
+			left: 100%;
+			transform: translate(0, -50%);
+			background-color: v.$c-tertiary;
+			opacity: 1;
+
+			&::before {
+				background-color: #fff;
+			}
+		}
+
+		.--small & {
+			@include v.mq(lpt) {
+				margin: 55px auto 0;
+			}
+
+			@include v.mq(s) {
+				margin: 32px auto 0;
+			}
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 50%;
+			border-radius: 50%;
+			background-color: v.$c-tertiary;
+			background-image: url(../images/common/icon_arrow_02_secondary.svg);
+			background-position: center;
+			background-repeat: no-repeat;
+			transform-origin: center;
+			transform: translateY(-50%) rotate(-90deg);
+			pointer-events: none;
+
+			@include v.mq(lpt) {
+				width: 50px;
+				height: 50px;
+				right: 30px;
+				background-size: 16px auto;
+			}
+
+			@include v.mq(s) {
+				width: 32px;
+				height: 32px;
+				right: 20px;
+				background-size: 12px auto;
+			}
+		}
+
+		&__link {
+			.--ja & {
+				@include v.ja();
+			}
+
+			.--en & {
+				@include v.en();
+			}
+
+			.--th & {
+				@include v.th();
+			}
+
+			cursor: pointer;
+			background-color: v.$c-secondary;
+			color: v.$c-tertiary;
+			border-radius: 9999px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			width: fit-content;
+			position: relative;
+			font-size: 1rem;
+			border: none;
+			appearance: none;
+
+			@include v.mq(lpt) {
+				padding: 20px 117px 20px 60px;
+				min-height: 90px;
+			}
+
+			@include v.mq(s) {
+				padding: 12px 60px 12px 30px;
+				min-height: 56px;
+			}
+		}
+	}
+
+	.wpcf7-form.sent .wpcf7-response-output {
+		display: none;
+	}
+}

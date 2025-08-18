@@ -1,0 +1,78 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+text
+--------------------------- */
+.u-fwb {
+	font-weight: bold !important;
+}
+
+.u-fwm {
+	font-weight: 500 !important;
+}
+
+.u-align--r {
+	text-align: right !important;
+}
+
+.u-align--c {
+	text-align: center !important;
+
+	&--pc {
+		@include v.mq(lpt) {
+			text-align: center !important;
+		}
+	}
+}
+
+.u-align-l {
+	text-align: left !important;
+
+	&--sp {
+		@include v.mq(s) {
+			text-align: left !important;
+		}
+	}
+}
+
+.u-ff {
+	&02 {
+		@include v.f2;
+	}
+}
+
+.u-lh200 {
+	line-height: 2 !important;
+}
+
+.u-uline {
+	text-decoration: underline !important;
+
+	&:hover,
+	&:focus {
+		text-decoration: none !important
+	}
+}
+
+@for $i from 10 to 42 {
+	.u-text--#{$i} {
+		font-feature-settings: "palt";
+		letter-spacing: 0.05em;
+
+		@include v.mq(lp) {
+			font-size: calc(#{$i} * 0.0625rem) !important;
+		}
+
+		@include v.mq(ts) {
+			font-size: calc(#{$i} * 0.06rem) !important;
+		}
+	}
+}
+
+@for $i from 10 to 33 {
+	.u-text--#{$i}--sp {
+		@include v.mq(ts) {
+			font-size: calc(#{$i} * 0.0714285714rem) !important
+		}
+	}
+}

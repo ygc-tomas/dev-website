@@ -1,0 +1,92 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+m
+--------------------------- */
+.u-valign--t {
+	vertical-align: top !important;
+}
+
+.u-valign--m {
+	vertical-align: middle !important;
+}
+
+.u-valign--b {
+	vertical-align: bottom !important;
+}
+
+@for $i from 0 through 90 {
+	$fz: 2px * $i;
+
+	.u-mt--#{$i} {
+		@include v.mq(lpt) {
+			margin-top: $fz;
+		}
+	}
+
+	.u-mt--#{$i}--tb {
+		@include v.mq(t) {
+			margin-top: $fz !important;
+		}
+	}
+
+	.u-mt--#{$i}--sp {
+		@include v.mq(s) {
+			margin-top: $fz;
+		}
+	}
+
+	.u-mb--#{$i} {
+		@include v.mq(lpt) {
+			margin-bottom: $fz;
+		}
+	}
+
+	.u-mb--#{$i}--tb {
+		@include v.mq(t) {
+			margin-bottom: $fz !important;
+		}
+	}
+
+	.u-mb--#{$i}--sp {
+		@include v.mq(s) {
+			margin-bottom: $fz;
+		}
+	}
+
+	.u-pt--#{$i} {
+		@include v.mq(lpt) {
+			padding-top: $fz;
+		}
+	}
+
+	.u-pt--#{$i}--tb {
+		@include v.mq(t) {
+			padding-top: $fz !important;
+		}
+	}
+
+	.u-pt--#{$i}--sp {
+		@include v.mq(s) {
+			padding-top: $fz;
+		}
+	}
+
+	.u-pb--#{$i} {
+		@include v.mq(lpt) {
+			padding-bottom: $fz;
+		}
+	}
+
+	.u-pb--#{$i}--tb {
+		@include v.mq(t) {
+			padding-bottom: $fz !important;
+		}
+	}
+
+	.u-pb--#{$i}--sp {
+		@include v.mq(s) {
+			padding-bottom: $fz;
+		}
+	}
+}

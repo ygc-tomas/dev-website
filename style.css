@@ -1,0 +1,48 @@
+/*
+Theme Name: TOMAS TECH
+Theme URI: https://tomastc.com/wp-content/themes/wp-theme/
+Author: TOMAS TECH
+Author URI: https://tomastc.com/
+Description: 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+/* 共通レイアウト設定 */
+.p-postLayout__contents {
+  display: grid;
+  gap: 20px;
+}
+
+/* 列数別 */
+.p-postLayout__contents[data-col="4"] {
+  grid-template-columns: repeat(4, 1fr);
+}
+.p-postLayout__contents[data-col="2"] {
+  grid-template-columns: repeat(2, 1fr);
+}
+.p-postLayout__contents[data-col="1"] {
+  grid-template-columns: 1fr;
+}
+
+/* カードの中身を縦並びにしてPDFボタンを下揃え */
+.p-postCard {
+  display: flex;
+  flex-direction: column;
+}
+.p-postCard__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.p-postCard__body a[target="_blank"] {
+  align-self: flex-start; /* 左寄せ */
+  margin-top: auto;       /* 下に寄せる */
+}
+
+/* モバイルは自動1列 */
+@media (max-width: 768px) {
+  .p-postLayout__contents {
+    grid-template-columns: 1fr !important;
+  }
+}

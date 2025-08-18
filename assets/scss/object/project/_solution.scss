@@ -1,0 +1,354 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+solution
+--------------------------- */
+
+.p-solution {
+	background-color: #fff;
+	position: relative;
+	filter: drop-shadow(12px 12px 15px rgba(v.$c-primary, 0.1));
+	overflow: hidden;
+
+	@include v.mq(lp) {
+		border-radius: 20px 40px 20px 40px;
+		padding: 85px 110px 60px;
+	}
+
+	@include v.mq(t) {
+		border-radius: 20px 40px 20px 40px;
+		padding: 60px 40px 60px;
+	}
+
+	@include v.mq(s) {
+		border-radius: 10px 20px 10px 20px;
+		padding: 32px 20px 32px;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		aspect-ratio: 1271/549;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-image: url(../images/index/bg_solution_01.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: left bottom;
+
+		@include v.mq(lpt) {
+			width: calc(1271 / 1320 * 100%);
+		}
+
+		@include v.mq(s) {
+			display: none;
+		}
+	}
+
+	&::after {
+		content: "Toward a Accompanying Future.";
+		@include v.f2;
+		line-height: 1;
+		letter-spacing: 0.05em;
+		position: absolute;
+		right: 0;
+		color: v.$c-tertiary;
+		opacity: 0.1;
+
+		@include v.mq(lpt) {
+			bottom: -10px;
+			font-size: v.rem(64);
+		}
+
+		@include v.mq(s) {
+			bottom: -2px;
+			white-space: nowrap;
+			font-size: v.srem(20);
+			text-align: right;
+		}
+	}
+
+	&__row {
+		display: flex;
+		position: relative;
+
+		@include v.mq(lp) {}
+
+		@include v.mq(ts) {
+			flex-direction: column;
+		}
+
+		&__head {
+			@include v.mq(lp) {
+				width: calc(320 / 1100 * 100%);
+				margin-right: 20px;
+			}
+
+			@include v.mq(s) {}
+
+			.--noDecoration & {
+				@include v.mq(lp) {
+					width: calc(450 / 1100 * 100%);
+				}
+
+				@include v.mq(s) {}
+			}
+		}
+
+		&__body {
+			@include v.mq(lp) {
+				width: calc(650 / 1100 * 100%);
+				// margin-top: 85px;
+				margin-top: 30px;
+			}
+
+			@include v.mq(t) {
+				margin-top: 36px;
+			}
+
+			@include v.mq(s) {
+				margin-top: 32px;
+			}
+
+			.--noDecoration & {
+				@include v.mq(lp) {
+					width: calc(500 / 1100* 100%);
+				}
+			}
+		}
+	}
+
+	&__text {
+		p {
+			color: v.$c-primary;
+			line-height: 2;
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+
+		@include v.mq(lpt) {
+			margin-top: 48px;
+		}
+
+		@include v.mq(s) {
+			margin-top: 24px;
+		}
+	}
+}
+
+.p-solutionList {
+	@include v.mq(lp) {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+	}
+
+	@include v.mq(t) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+
+	@include v.mq(s) {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+
+	&__item {
+		overflow: hidden;
+		background-color: #fff;
+		filter: drop-shadow(12px 12px 15px rgba(v.$c-primary, 0.1));
+		position: relative;
+
+		@include v.mq(lpt) {
+			border-radius: 20px 40px 20px 40px;
+			padding: 42px 32px 22px;
+		}
+
+		@include v.mq(s) {
+			border-radius: 10px 20px 10px 20px;
+			padding: 28px 20px 20px;
+		}
+	}
+
+	&__heading {
+		text-align: center;
+		color: v.$c-tertiary;
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		position: relative;
+		z-index: 4;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(18);
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(16);
+		}
+	}
+
+	&__image {
+		position: relative;
+		z-index: 4;
+		width: 100%;
+
+		@include v.mq(lpt) {
+			max-width: 160px;
+			margin: 5px auto 0;
+		}
+
+		@include v.mq(s) {
+			max-width: 160px;
+			margin: 5px auto 0;
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		z-index: 4;
+	}
+
+	&__decoration {
+		@include v.f2;
+		line-height: 1;
+		writing-mode: vertical-lr;
+		font-weight: bold;
+		position: absolute;
+		white-space: nowrap;
+		color: v.$c-tertiary;
+		opacity: 0.1;
+
+		@include v.mq(lpt) {
+			top: 15px;
+			left: -3px;
+			font-size: v.rem(20);
+		}
+
+		@include v.mq(s) {
+			top: 10px;
+			left: -3px;
+			font-size: v.srem(16);
+		}
+	}
+}
+
+.p-solution02 {
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+
+	@include v.mq(lp) {
+		border-radius: 20px 40px 20px 40px;
+		padding: 80px 115px 130px;
+	}
+
+	@include v.mq(t) {
+		border-radius: 20px 40px 20px 40px;
+		padding: 60px 40px 60px 40px;
+	}
+
+	@include v.mq(s) {
+		border-radius: 10px 20px 10px 20px;
+		padding: 32px 20px 32px
+	}
+
+	&__heading {
+		.decoration {
+			@include v.f2;
+			opacity: 0.4;
+			font-weight: 400;
+			color: v.$c-primary;
+			display: block;
+
+			@include v.mq(lpt) {
+				font-size: v.rem(12);
+				margin-bottom: 11px;
+			}
+
+			@include v.mq(s) {
+				font-size: v.srem(10);
+				margin-bottom: 8px;
+			}
+		}
+
+		.main {
+			font-weight: 600;
+			letter-spacing: 0.1em;
+			line-height: 1.3;
+			display: block;
+			color: v.$c-primary;
+
+			@include v.mq(lp) {
+				font-size: v.rem(48);
+			}
+
+			@include v.mq(t) {
+				font-size: v.rem(34);
+			}
+
+			@include v.mq(s) {
+				font-size: v.srem(24);
+			}
+
+
+			.--ja &,
+			.--en & {
+				@include v.f3;
+			}
+
+			.--th & {
+				@include v.f4;
+			}
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 1.9em;
+
+		@include v.mq(lpt) {
+			margin-top: 32px;
+		}
+
+		@include v.mq(s) {
+			margin-top: 24px;
+		}
+
+		p {
+			line-height: 2;
+		}
+	}
+
+	&__decoration {
+		@include v.f2;
+		line-height: 1;
+		font-weight: bold;
+		position: absolute;
+		white-space: nowrap;
+		color: v.$c-tertiary;
+		opacity: 0.1;
+		letter-spacing: 0.05em;
+
+		@include v.mq(lpt) {
+			bottom: -8px;
+			right: 0;
+			font-size: v.rem(64);
+		}
+
+		@include v.mq(s) {
+			bottom: -3px;
+			right: 0;
+			white-space: nowrap;
+			font-size: v.srem(24);
+		}
+	}
+}

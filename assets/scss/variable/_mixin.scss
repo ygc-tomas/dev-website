@@ -1,0 +1,9 @@
+@mixin replace ($original, $replacement) {
+	@at-root #{selector-replace(&, $original, $replacement)} {
+		@content
+	}
+}
+
+@mixin content-shadow() {
+	filter: drop-shadow(12px 12px 15px rgba(#0055A0, 0.1));
+}

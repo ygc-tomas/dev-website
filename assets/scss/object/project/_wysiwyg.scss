@@ -1,0 +1,467 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+wysiwyg
+--------------------------- */
+
+.p-wysiwyg {
+	>:first-child {
+		margin-block-start: 0;
+	}
+
+	>* {
+		margin-block-start: calc(1em * calc(calc((clamp(1.3, calc((1.1 - (calc(1 + 2 * 0.4))) / (8 - 1)) * calc(8 / (8 - 0)) + calc(calc(1 + 2 * 0.4) + -1 * calc((1.1 - (calc(1 + 2 * 0.4))) / (8 - 1))), calc(1 + 2 * 0.4))) / 3) * 2.4));
+	}
+
+	h2 {
+
+		.--ja &,
+		.--en & {
+			@include v.f3;
+		}
+
+		.--th & {
+			@include v.f4;
+		}
+
+		line-height: 1.3;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(48);
+		}
+
+		@include v.mq(s) {}
+	}
+
+	p {
+		line-height: 2;
+		margin-block-start: calc(1em * calc(calc((clamp(1.3, calc((1.1 - (calc(1 + 2 * 0.4))) / (8 - 1)) * calc(8 / (8 - 0)) + calc(calc(1 + 2 * 0.4) + -1 * calc((1.1 - (calc(1 + 2 * 0.4))) / (8 - 1))), calc(1 + 2 * 0.4))) / 3) * 2.4));
+
+	}
+
+	.wp-block-columns {
+		.wp-block-column {
+			h2 {
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+
+	ol {
+		counter-reset: number;
+		display: flex;
+		flex-direction: column;
+		gap: 1.7em;
+
+		li {
+			counter-increment: number;
+			position: relative;
+			font-weight: bold;
+
+			@include v.mq(lpt) {
+				font-size: v.rem(20);
+				padding-left: 75px;
+			}
+
+			@include v.mq(s) {}
+
+			&::before {
+				@include v.f2;
+				content: counter(number, decimal-leading-zero)"";
+				font-weight: bold;
+				color: rgba(v.$c-tertiary, 0.1);
+				line-height: 1;
+				position: absolute;
+
+				@include v.mq(lpt) {
+					top: 5px;
+					left: 10px;
+					font-size: v.rem(30);
+				}
+
+				@include v.mq(s) {}
+			}
+		}
+	}
+
+	.wp-block-buttons {
+		.wp-block-button {
+			.wp-block-button__link {
+				background-color: v.$c-secondary;
+				color: v.$c-tertiary;
+				border-radius: 9999px;
+				font-weight: bold;
+				display: flex;
+				align-items: center;
+				width: fit-content;
+				position: relative;
+
+				@include v.mq(lpt) {
+					padding: 20px 103px 20px 60px;
+					min-height: 90px;
+				}
+
+				@include v.mq(s) {}
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%) rotate(-90deg);
+					transform-origin: center;
+					border-radius: 50%;
+					background-color: v.$c-tertiary;
+					background-image: url(../images/common/icon_arrow_02_secondary.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+
+					@include v.mq(lpt) {
+						width: 50px;
+						height: 50px;
+						background-size: 16px auto;
+						right: 30px;
+					}
+
+					@include v.mq(s) {}
+				}
+			}
+		}
+	}
+}
+
+.hoge {
+	p {
+		font-style: italic;
+	}
+}
+
+.p-wysiwyg02 {
+	>:first-child {
+		margin-block-start: 0;
+	}
+
+	>* {
+		margin-block-start: calc(1em * calc(calc((clamp(1.3, calc((1.1 - (calc(1 + 2 * 0.4))) / (8 - 1)) * calc(8 / (8 - 0)) + calc(calc(1 + 2 * 0.4) + -1 * calc((1.1 - (calc(1 + 2 * 0.4))) / (8 - 1))), calc(1 + 2 * 0.4))) / 3) * 2.4));
+	}
+
+	p {
+		line-height: 1.75;
+	}
+
+	em {
+		font-weight: normal;
+		font-style: italic;
+
+		>* {
+			font-style: italic;
+		}
+	}
+
+	h2 {
+		font-weight: 600;
+		line-height: 1.5;
+		position: relative;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(28);
+			padding-left: 26px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(18);
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			background-color: v.$c-primary;
+			border-radius: 9999px;
+
+			@include v.mq(lpt) {
+				width: 8px;
+				height: 40px;
+				top: 2px;
+			}
+
+			@include v.mq(s) {}
+		}
+	}
+
+	h3 {
+		font-weight: 600;
+		border-bottom: 2px solid v.$c-primary;
+		line-height: 1.5;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(22);
+			padding-bottom: 13px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(18);
+			padding: 11px 16px;
+		}
+	}
+
+	h4 {
+		font-weight: 600;
+		line-height: 1.5;
+		background-color: v.$c-bg;
+		position: relative;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(20);
+			// border-radius: 10px;
+			padding: 14px 21px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(18);
+			padding-bottom: 10px;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: v.$c-base;
+
+			@include v.mq(lpt) {
+				width: 6px;
+			}
+
+			@include v.mq(s) {}
+		}
+	}
+
+	h5,
+	h6 {
+		font-weight: 600;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(18);
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(16);
+		}
+	}
+
+	.wp-block-image {}
+
+	.wp-block-table {
+		position: relative;
+
+		table {
+			border: none;
+
+			th,
+			td {
+				// text-align: center;
+				border: none;
+
+				@include v.mq(lpt) {
+					// font-size: v.rem(14);
+					padding: 18px 14px;
+				}
+
+				@include v.mq(s) {}
+			}
+
+			thead {
+				border-bottom: 2px solid #fff;
+
+				tr {
+					th {
+						background-color: v.$c-bg;
+
+						&:not(:last-child) {
+							border-right: 2px solid #fff;
+						}
+					}
+				}
+			}
+
+			tbody {
+				tr {
+					&:not(:last-child) {
+						border-bottom: 2px solid #fff;
+					}
+
+					th {
+						background-color: v.$c-bg;
+					}
+
+					td {
+						background-color: #fff;
+
+						&:first-child {
+							background-color: v.$c-gray;
+						}
+
+						&:not(:last-child) {
+							border-right: 2px solid #fff;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	.wp-block-buttons {
+
+		.wp-block-button {
+			&__link {
+				background-color: v.$c-secondary;
+				color: v.$c-tertiary;
+				border-radius: 9999px;
+				font-weight: bold;
+				display: flex;
+				align-items: center;
+				width: fit-content;
+				position: relative;
+
+				@include v.mq(lpt) {
+					padding: 20px 117px 20px 60px;
+					min-height: 90px;
+				}
+
+				@include v.mq(s) {}
+
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					border-radius: 50%;
+					background-color: v.$c-tertiary;
+					background-image: url(../images/common/icon_arrow_02_secondary.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+					transform-origin: center;
+					transform: translateY(-50%) rotate(-90deg);
+
+					@include v.mq(lpt) {
+						width: 50px;
+						height: 50px;
+						right: 30px;
+						background-size: 16px auto;
+					}
+
+					@include v.mq(s) {}
+				}
+
+				&[download] {
+					&::after {
+						background-image: url(../images/common/icon_download_01.svg);
+						transform: translateY(-50%);
+
+						@include v.mq(lpt) {
+							background-size: 18px auto;
+						}
+
+						@include v.mq(s) {}
+					}
+				}
+
+			}
+		}
+	}
+
+	ul {
+
+		>li {
+			position: relative;
+			line-height: calc(36/14);
+
+			@include v.mq(lpt) {
+				font-size: v.rem(14);
+				padding-left: 20px;
+			}
+
+			@include v.mq(s) {
+				padding-left: 20px;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				width: 4px;
+				height: 4px;
+				position: absolute;
+				top: 1em;
+				left: 0;
+				border-radius: 50%;
+				background: v.$c-base;
+			}
+		}
+	}
+
+	ol {
+		>li {
+			list-style: decimal;
+			margin-left: 1em;
+			line-height: calc(36/14);
+
+			@include v.mq(lpt) {
+				font-size: v.rem(14);
+			}
+
+			@include v.mq(s) {}
+
+			&::marker {
+				@include v.f2;
+			}
+		}
+	}
+
+	ul,
+	ol {
+		li {
+			>ul {
+				>li {
+					&::before {
+						border: 1px solid v.$c-base;
+						width: 7px;
+						height: 7px;
+						background: #fff;
+					}
+				}
+			}
+
+			>ul,
+			>ol {
+				>li {
+					>ul {
+						>li {
+							&::before {
+								width: 7px;
+								height: 7px;
+								border-radius: 0;
+								border: none;
+								background: v.$c-base;
+
+								@include v.mq(lpt) {
+									top: 14px;
+								}
+
+								@include v.mq(s) {}
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+	}
+}

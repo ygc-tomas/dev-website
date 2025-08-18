@@ -1,0 +1,99 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+list
+--------------------------- */
+
+.p-list {
+	@include v.mq(lpt) {
+		max-width: 850px;
+		margin-inline: auto;
+	}
+
+	@include v.mq(s) {}
+
+	&__heading {
+		@include v.f3;
+		font-weight: 600;
+		color: v.$c-tertiary;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(32);
+			margin-bottom: 28px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(24);
+			margin-bottom: 20px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		border-top: 1px solid rgba(v.$c-gray, 0.5);
+
+		dl {
+			display: flex;
+			border-bottom: 1px solid rgba(v.$c-gray, 0.5);
+
+			@include v.mq(lp) {
+				padding: 20px 5px;
+				justify-content: space-between
+			}
+
+			@include v.mq(t) {
+				flex-direction: column;
+				padding: 18px 5px;
+				gap: 12px;
+			}
+
+			@include v.mq(s) {
+				flex-direction: column;
+				padding: 16px 0;
+			}
+
+			dt,
+			dd {
+
+				.--ja &,
+				.--en & {
+					@include v.f3;
+				}
+
+				.--th & {
+					@include v.f4;
+				}
+
+				color: v.$c-tertiary;
+				line-height: 2;
+
+				@include v.mq(lpt) {
+					// font-size: v.rem(18);
+				}
+
+				@include v.mq(s) {}
+			}
+
+			dt {
+				flex: 1;
+
+				@include v.mq(lpt) {}
+
+				@include v.mq(s) {}
+			}
+
+			dd {
+				@include v.mq(lp) {
+					width: 540px;
+				}
+
+				@include v.mq(s) {}
+
+				a {
+					color: v.$c-tertiary;
+				}
+			}
+		}
+	}
+}

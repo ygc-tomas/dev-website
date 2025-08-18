@@ -1,0 +1,55 @@
+@use "../../variable" as v;
+
+.u-c {
+	&--base {
+		color: v.$c-base !important;
+	}
+
+	&--lightGray {
+		color: v.$c-light-gray !important;
+	}
+
+	&--primary {
+		color: v.$c-primary !important;
+	}
+
+	&--secondary {
+		color: v.$c-secondary !important;
+	}
+
+	&--wh {
+		color: #fff !important;
+	}
+
+}
+
+.u-bg {
+	&--base {
+		background-color: v.$c-base !important;
+	}
+
+	&--wh {
+		background-color: #fff !important;
+	}
+
+	&--bg {
+		background-color: v.$c-bg !important;
+	}
+
+	&--primary {
+		background-color: v.$c-primary !important;
+	}
+
+	&--secondary {
+		background-color: v.$c-secondary !important;
+	}
+
+	&--quaternary {
+		background-color: v.$c-quaternary !important;
+	}
+
+	&--gray {
+		background-color: v.$c-gray;
+	}
+
+}

@@ -1,0 +1,260 @@
+@use "../variable" as v;
+
+/* ---------------------------
+l-footer
+--------------------------- */
+
+.l-footer {
+	background-color: #002B5C;
+
+	@include v.mq(lp) {
+		padding: 95px 0 50px;
+		border-radius: 0 40px 0 0;
+		width: min(calc(1460 / 1600 * 100vw), calc(100vw - 140px));
+	}
+
+	@include v.mq(ts) {
+		padding: 40px 0 35px;
+		border-radius: 0 20px 0 0;
+		width: calc(100% - 15px);
+	}
+
+	&__inner {
+		@include v.mq(lp) {
+			padding: 0 60px;
+		}
+
+		@include v.mq(t) {
+			padding: 0 40px;
+		}
+
+		@include v.mq(s) {
+			padding: 0 15px 0 15px;
+		}
+	}
+
+	&__nav {
+		@include v.mq(lp) {
+			padding: 0 80px;
+
+		}
+
+		@include v.mq(ts) {}
+
+		&__list {
+			display: grid;
+
+			@include v.mq(lp) {
+				grid-template-columns: repeat(6, 1fr);
+				gap: 20px 20px;
+				max-width: 780px;
+			}
+
+			@include v.mq(ts) {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 15px 15px;
+			}
+
+			&__item {
+				&:first-child {
+					@include v.mq(lp) {
+						grid-column: 1/7;
+					}
+
+					@include v.mq(ts) {
+						grid-column: 1/3;
+					}
+				}
+			}
+
+			&__link {
+				color: #fff;
+
+				@include v.mq(lpt) {}
+
+				@include v.mq(s) {}
+			}
+		}
+
+		&__subList {
+			display: flex;
+			flex-direction: column;
+
+			@include v.mq(lpt) {
+				margin-top: 12px;
+				gap: 12px;
+			}
+
+			@include v.mq(s) {
+				margin-top: 10px;
+				gap: 10px;
+			}
+
+			&__item {}
+
+			&__heading {
+				color: #fff;
+
+				@include v.mq(lpt) {
+					font-size: v.rem(15);
+				}
+
+				@include v.mq(s) {
+					font-size: v.srem(13);
+				}
+			}
+
+			&__linkList {
+				display: flex;
+				flex-wrap: wrap;
+
+				@include v.mq(lpt) {
+					gap: 5px 18px;
+				}
+
+				@include v.mq(s) {
+					gap: 4px 14px;
+				}
+
+				&__item {
+					a {
+						color: #fff;
+						position: relative;
+
+						@include v.mq(lpt) {
+							font-size: v.rem(14);
+							padding-left: 15px;
+						}
+
+						@include v.mq(s) {
+							font-size: v.srem(13);
+							padding-left: 14px;
+						}
+
+						&::before {
+							content: "";
+							display: block;
+							position: absolute;
+							left: 0;
+							border-top: 2px solid #fff;
+							border-right: 2px solid #fff;
+							transform: rotate(45deg);
+
+							@include v.mq(lpt) {
+								width: 6px;
+								height: 6px;
+								top: 7px;
+							}
+
+							@include v.mq(s) {
+								width: 5px;
+								height: 5px;
+								top: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__foot {
+		border-top: 1px solid rgba(v.$c-quaternary, 0.4);
+		display: flex;
+
+		@include v.mq(lp) {
+			justify-content: space-between;
+			margin-top: 110px;
+			padding-top: 35px;
+		}
+
+		@include v.mq(ts) {
+			flex-direction: column;
+			margin-top: 50px;
+			padding-top: 30px;
+		}
+
+		&__contents {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+	}
+
+	&__logo {
+		@include v.mq(lp) {
+			width: 419px;
+			padding-top: 40px;
+		}
+
+		@include v.mq(ts) {
+			width: 220px;
+		}
+	}
+
+	&__pagetop {
+		position: relative;
+
+		@include v.mq(lpt) {
+			width: 88px;
+			height: 88px;
+		}
+
+		@include v.mq(s) {
+			width: 62px;
+			height: 62px;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+
+			&:first-child {
+				animation: footerPagetopButtonAnime 18s infinite linear;
+			}
+		}
+	}
+
+	&__privacy {
+		color: #fff;
+		opacity: 0.6;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(12);
+			margin-top: 40px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(10);
+			margin-top: 24px;
+		}
+	}
+
+	&__copyright {
+		@include v.f2;
+		color: v.$c-quaternary;
+		letter-spacing: 0.1em;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(12);
+			margin-top: 36px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(10);
+			margin-top: 20px;
+		}
+	}
+}
+
+@keyframes footerPagetopButtonAnime {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

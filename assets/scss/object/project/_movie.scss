@@ -1,0 +1,142 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+movie
+--------------------------- */
+
+.p-movie {
+	width: 100%;
+
+	&__thumbnail {
+		background: none;
+		border: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include v.mq(lpt) {
+			max-width: 724px;
+			margin-inline: auto;
+		}
+
+		@include v.mq(s) {
+			width: 100%;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__popup {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 5000;
+
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: 0.3s;
+
+		.--open & {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: auto;
+		}
+
+		&__overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		&__contents {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			@include v.mq(lpt) {
+				max-width: 1320px;
+				height: 100%;
+				width: calc(100vw - 240px);
+				max-height: calc(100vh - 160px);
+			}
+
+			@include v.mq(s) {
+				width: calc(100vw - 20px);
+				max-height: calc(100vh - 90px);
+			}
+		}
+
+		&__movie {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			video {
+				object-fit: cover;
+				display: block;
+				width: 100%;
+				height: 100%;
+
+				@include v.mq(lpt) {}
+
+				@include v.mq(s) {}
+			}
+		}
+
+		&__close {
+			position: absolute;
+			background: v.$c-base;
+			display: block;
+			border: none;
+			border-radius: 50%;
+
+			@include v.mq(lpt) {
+				width: 54px;
+				height: 54px;
+				top: -54px;
+				right: -60px;
+			}
+
+			@include v.mq(s) {
+				width: 42px;
+				height: 42px;
+				right: 0;
+				top: -62px;
+			}
+
+			.line {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				background-color: #fff;
+				display: block;
+				transform: translate(-50%, -50%) rotate(45deg);
+
+				@include v.mq(lpt) {
+					height: 3px;
+					width: calc(20px / cos(45deg));
+				}
+
+				@include v.mq(s) {
+					height: 2px;
+					width: calc(16px / cos(45deg));
+				}
+
+				&:last-child {
+					transform: translate(-50%, -50%) rotate(-45deg);
+				}
+			}
+		}
+	}
+}

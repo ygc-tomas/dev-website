@@ -1,0 +1,64 @@
+@use "sass:math";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+Thai:wdth,wght@62.5..100,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Thai:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shippori+Mincho:wght@600&display=swap');
+
+@mixin f1() {
+	font-family: "Noto Sans JP", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin ja() {
+	font-family: "Noto Sans JP", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin th() {
+	font-family: "Noto Sans Thai", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@mixin en() {
+	font-family: "Noto Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+}
+
+@mixin f2() {
+	font-family: "Open Sans", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 700;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+}
+
+@mixin f3() {
+	font-family: "Shippori Mincho", serif;
+	font-weight: 600;
+	font-style: normal;
+}
+
+@mixin f4() {
+	font-family: "Noto Serif Thai", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-style: normal;
+	font-variation-settings:
+		"wdth" 100;
+}
+
+@function rem($pixel) {
+	@return math.div($pixel, 16) * 1rem;
+}
+
+@function srem($pixel) {
+	@return math.div($pixel, 14) * 1rem;
+}

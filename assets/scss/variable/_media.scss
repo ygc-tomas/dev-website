@@ -1,0 +1,17 @@
+$bps: (
+	s: 'screen and (max-width: 768px)',
+	t: 'screen and (min-width: 769px) and (max-width: 1024px)',
+	p: 'screen and (min-width: 1025px) and (max-width: 1440px)',
+	l: 'screen and (min-width: 1441px)',
+	lp: 'screen and (min-width: 1025px)',
+	pts: 'screen and (min-width: 769px) and (max-width: 1024px)',
+	pt: 'screen and (min-width: 769px) and (max-width: 1440px)',
+	ts: 'screen and (max-width: 1024px)',
+	lpt: 'screen and (min-width: 769px)'
+	) !default;
+
+@mixin mq($bp) {
+	@media #{map-get($bps, $bp)} {
+		@content;
+	}
+}

@@ -1,0 +1,16 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+u-border
+--------------------------- */
+
+.u-border {
+	&--b {
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+	}
+
+	&--gray {
+		border-color: #cccccc;
+	}
+}

@@ -1,0 +1,59 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+heading
+--------------------------- */
+
+.c-heading {
+	.decoration {
+		@include v.f2;
+		opacity: 0.4;
+		font-weight: 400;
+		color: v.$c-tertiary;
+		display: block;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(12);
+			margin-bottom: 14px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(10);
+			margin-bottom: 8px;
+		}
+	}
+
+	.main {
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		line-height: 1.3;
+		display: block;
+		color: v.$c-tertiary;
+
+		@include v.mq(lp) {
+			font-size: v.rem(56)
+		}
+
+		@include v.mq(t) {
+			font-size: v.rem(42);
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(32);
+		}
+
+		.--ja & {
+			@include v.f3;
+		}
+
+		.--en & {
+			@include v.f3;
+			letter-spacing: 0.05em;
+		}
+
+		.--th & {
+			@include v.f4;
+			letter-spacing: 0.05em;
+		}
+	}
+}

@@ -1,0 +1,80 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+recruit
+--------------------------- */
+
+.p-recruitBanner {
+	background-color: v.$c-tertiary;
+	display: block;
+	position: relative;
+
+	@include v.mq(lp) {
+		background-image: url(../images/common/bg_recruit_01.svg);
+		background-size: cover;
+		border-radius: 20px 40px 20px 40px;
+		aspect-ratio: 1320 / 386;
+	}
+
+	@include v.mq(ts) {
+		background-image: url(../images/common/bg_recruit_01.svg);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		border-radius: 10px 20px 10px 20px;
+	}
+
+	&__inner {
+		height: 100%;
+		position: relative;
+		display: flex;
+
+		@include v.mq(lp) {
+			justify-content: space-between;
+			padding: 20px 110px 20px;
+		}
+
+		@include v.mq(t) {
+			flex-direction: column;
+			padding: 20px 40px 20px;
+		}
+
+		@include v.mq(s) {
+			flex-direction: column;
+			padding: 20px 15px 20px;
+		}
+	}
+
+	&__contents {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__text {
+		color: #fff;
+
+		@include v.mq(lp) {
+			font-size: v.rem(14);
+			margin-top: 30px;
+		}
+
+		@include v.mq(ts) {
+			font-size: v.srem(12);
+			margin-top: 18px;
+		}
+	}
+
+	&__button {
+		margin-top: auto;
+
+		@include v.mq(lp) {
+			padding-bottom: 50px;
+		}
+
+		@include v.mq(ts) {
+			margin-left: auto;
+			margin-top: 24px;
+		}
+	}
+}

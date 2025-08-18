@@ -1,0 +1,258 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+section
+--------------------------- */
+
+.p-section {
+	@include v.mq(lpt) {}
+
+	@include v.mq(s) {}
+
+
+	&__contents {
+		overflow: hidden;
+		@include v.content-shadow();
+		background-color: #fff;
+
+		&.--flex {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		@include v.mq(lp) {
+			padding: 80px 110px;
+			border-radius: 20px 40px 20px 40px;
+		}
+
+		@include v.mq(t) {
+			padding: 60px 40px 60px;
+			border-radius: 20px 40px 20px 40px;
+		}
+
+		@include v.mq(s) {
+			padding: 32px 20px 48px;
+			border-radius: 10px 20px 10px 20px;
+		}
+
+		.--small & {
+			@include v.mq(lpt) {
+				padding: 105px 130px 100px;
+			}
+
+			@include v.mq(t) {
+				padding: 60px 40px 60px;
+			}
+
+			@include v.mq(s) {}
+		}
+
+		.--medium & {
+			@include v.mq(lp) {
+				padding: 105px 100px 100px;
+			}
+
+			@include v.mq(t) {
+				padding: 60px 40px 60px;
+			}
+
+			@include v.mq(s) {}
+		}
+
+		.--case & {
+			@include v.mq(lpt) {
+				padding-bottom: 148px;
+			}
+
+			@include v.mq(s) {
+				padding-bottom: 100px;
+			}
+		}
+
+		.--company & {
+			@include v.mq(lpt) {
+				padding-bottom: 110px;
+			}
+
+			@include v.mq(s) {
+				padding-bottom: 90px;
+			}
+		}
+	}
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		z-index: 5;
+
+		@include v.mq(lpt) {}
+
+		@include v.mq(s) {
+			flex-direction: column;
+		}
+	}
+
+	&__heading {
+		flex: 1;
+
+		@include v.mq(lpt) {}
+
+		@include v.mq(s) {
+			width: 100%;
+			order: 1;
+		}
+	}
+
+	&__button {
+		@include v.mq(lpt) {
+			margin-top: 5px;
+			width: 240px;
+			margin-left: auto;
+		}
+
+		@include v.mq(s) {
+			order: 3;
+			margin-left: auto;
+			margin-top: 20px;
+		}
+	}
+
+	&__body {
+		position: relative;
+		z-index: 5;
+		width: 100%;
+
+		@include v.mq(lpt) {
+			margin-top: 47px;
+		}
+
+		@include v.mq(s) {
+			margin-top: 28px;
+			order: 2;
+		}
+	}
+
+	&__illust {
+		position: absolute;
+
+		right: 0;
+		bottom: 0;
+
+		.--case & {
+			@include v.mq(lpt) {
+				width: min(calc(492 / 1600 * 100vw), 492px);
+				transform: translate(5.2%, 20%);
+			}
+
+			@include v.mq(s) {
+				width: 260px;
+				transform: translate(5.2%, 20%);
+			}
+		}
+
+		.--company & {
+			@include v.mq(lpt) {
+				width: min(calc(197 / 1600 * 100vw), 197px);
+				transform: translate(6%, 20%);
+			}
+
+			@include v.mq(s) {
+				width: 92px;
+				transform: translate(6%, 20%);
+			}
+		}
+	}
+}
+
+.p-section02 {
+	position: relative;
+
+	@include v.mq(lpt) {}
+
+	@include v.mq(s) {}
+
+	&::before {
+		content: "";
+		content: "";
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: v.$c-quaternary;
+
+		@include v.mq(lpt) {
+			width: min(calc(calc(1320px + calc(100vw - 1320px) / 2)), calc(100vw - 40px));
+			border-radius: 20px 0 0 40px;
+		}
+
+		@include v.mq(s) {
+			width: calc(100% - 15px);
+			border-radius: 10px 0 0 20px;
+		}
+	}
+
+	&__contents {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include v.mq(lp) {
+			padding: 100px 110px;
+		}
+
+		@include v.mq(t) {
+			padding: 60px 40px 60px;
+		}
+
+		@include v.mq(s) {
+			padding: 32px 15px 32px 25px;
+		}
+	}
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		z-index: 5;
+	}
+
+	&__heading {
+		flex: 1;
+
+		@include v.mq(lpt) {}
+
+		@include v.mq(s) {
+			order: 1;
+		}
+	}
+
+	&__button {
+		@include v.mq(lpt) {
+			width: 200px;
+			margin-top: 5px;
+		}
+
+		@include v.mq(s) {
+			width: 100%;
+			order: 3;
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 32px;
+		}
+	}
+
+	&__body {
+		position: relative;
+		z-index: 5;
+		width: 100%;
+
+		@include v.mq(lpt) {
+			margin-top: 80px;
+		}
+
+		@include v.mq(s) {
+			order: 2;
+			margin-top: 20px;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+pagination
+--------------------------- */
+
+.p-pagination {
+	.pagination {
+		.nav-links {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			@include v.mq(lpt) {
+				gap: 25px;
+			}
+
+			@include v.mq(s) {
+				gap: 15px 20px;
+			}
+
+			.page-numbers {
+				@include v.f2;
+				border-radius: 50%;
+				background-color: v.$c-secondary;
+				color: v.$c-tertiary;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: 0.3s;
+
+				@include v.mq(lpt) {
+					font-size: v.rem(18);
+					width: 50px;
+					height: 50px;
+				}
+
+				@include v.mq(s) {
+					font-size: v.srem(16);
+					width: 40px;
+					height: 40px;
+				}
+
+				&.current,
+				&:hover {
+					background-color: #E4F3FC;
+				}
+			}
+		}
+	}
+}

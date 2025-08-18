@@ -1,0 +1,75 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+u-display
+--------------------------- */
+
+.u-display {
+	&--pc {
+		@include v.mq(lpt) {
+			display: block;
+		}
+
+		@include v.mq(s) {
+			display: none;
+		}
+	}
+
+	&--sp {
+		@include v.mq(lpt) {
+			display: none;
+		}
+
+		@include v.mq(s) {
+			display: block;
+		}
+	}
+
+	&--large {
+		@include v.mq(lp) {
+			display: block;
+		}
+
+		@include v.mq(ts) {
+			display: none;
+		}
+	}
+
+	&--tb {
+		@include v.mq(lp) {
+			display: none;
+		}
+
+		@include v.mq(t) {
+			display: block;
+		}
+
+		@include v.mq(s) {
+			display: none;
+		}
+	}
+
+	&--tbsp {
+		@include v.mq(lp) {
+			display: none;
+		}
+
+		@include v.mq(ts) {
+			display: block;
+		}
+	}
+
+	&--tbnone {
+		@include v.mq(lp) {
+			display: block;
+		}
+
+		@include v.mq(t) {
+			display: none;
+		}
+
+		@include v.mq(s) {
+			display: block;
+		}
+	}
+}

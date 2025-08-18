@@ -1,0 +1,21 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+sentence
+--------------------------- */
+
+.c-sentence {
+	display: flex;
+	flex-direction: column;
+	gap: 1.9em;
+
+	p {
+		color: v.$c-tertiary;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(18);
+		}
+
+		@include v.mq(s) {}
+	}
+}

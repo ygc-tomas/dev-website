@@ -1,0 +1,281 @@
+@use "../../variable" as v;
+
+/* ---------------------------
+client
+--------------------------- */
+
+.p-client {
+	position: relative;
+
+	&::before {
+		content: "";
+		content: "";
+		display: block;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: v.$c-quaternary;
+
+		@include v.mq(lpt) {
+			// width: min(calc(calc(1320px + calc(100vw - 1320px) / 2)), calc(100vw - 40px));
+			width: min(calc(100% - calc(100% - 1320px) / 2), calc(100vw - 40px));
+			border-radius: 20px 0 0 40px;
+		}
+
+		@include v.mq(s) {
+			width: calc(100% - 15px);
+			border-radius: 10px 0 0 20px;
+		}
+	}
+
+	&__contents {
+		position: relative;
+		overflow: hidden;
+
+		@include v.mq(lp) {
+			padding: 100px 110px 80px;
+		}
+
+		@include v.mq(p) {
+			padding: 80px 50px 60px;
+			border-radius: 0 0 0 40px;
+		}
+
+		@include v.mq(t) {
+			padding: 60px 40px 60px;
+			border-radius: 0 0 0 40px;
+		}
+
+		@include v.mq(s) {
+			padding: 32px 15px 32px 25px;
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			aspect-ratio: 494/350;
+			position: absolute;
+			bottom: 7%;
+			left: -2%;
+			background-image: url(../images/index/bg_client_01.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+
+			@include v.mq(lpt) {
+				width: min(calc(494 / 1320 * 100%), 494px);
+			}
+
+			@include v.mq(t) {
+				bottom: -5%;
+				width: min(calc(320 / 1024 * 100%), 320px);
+			}
+
+			@include v.mq(s) {}
+		}
+
+		&::after {
+			content: "Client Referrals.";
+			@include v.f2;
+			line-height: 1;
+			letter-spacing: 0.05em;
+			position: absolute;
+			right: 0;
+			color: v.$c-tertiary;
+			opacity: 0.1;
+
+			@include v.mq(lpt) {
+				bottom: -10px;
+				font-size: v.rem(64);
+			}
+
+			@include v.mq(s) {
+				bottom: -2px;
+				white-space: nowrap;
+				font-size: v.srem(20);
+				text-align: right;
+			}
+		}
+
+	}
+
+	&__row {
+		display: flex;
+		position: relative;
+
+		@include v.mq(lp) {}
+
+		@include v.mq(ts) {
+			flex-direction: column;
+		}
+
+		&__head {
+			@include v.mq(lp) {
+				width: calc(320 / 1100 * 100%);
+				margin-right: 20px;
+			}
+
+			@include v.mq(s) {}
+		}
+
+		&__body {
+			@include v.mq(lp) {
+				// width: calc(650 / 1100 * 100%);
+				flex: 1;
+				// margin-top: 85px;
+				margin-top: 65px;
+			}
+
+			@include v.mq(t) {
+				margin-top: 36px;
+			}
+
+			@include v.mq(s) {
+				margin-top: 32px;
+			}
+
+			.--noDecoration & {
+				@include v.mq(lp) {
+					width: calc(500 / 1100* 100%);
+				}
+			}
+		}
+	}
+
+	&__list {
+		@include v.mq(lpt) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 2px 40px;
+		}
+
+		@include v.mq(s) {}
+
+		&__item {
+			line-height: 1.8;
+
+			@include v.mq(lpt) {
+				font-size: v.rem(14);
+			}
+
+			@include v.mq(s) {}
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: flex-end;
+
+		@include v.mq(lpt) {
+			margin-top: 48px;
+		}
+
+		@include v.mq(s) {
+			margin-top: 24px;
+		}
+	}
+}
+
+.p-clientList {
+	background-color: #fff;
+	@include v.content-shadow();
+
+	@include v.mq(lpt) {
+		padding: 32px 0;
+		border-radius: 10px 20px 10px 20px;
+	}
+
+	@include v.mq(s) {
+		padding: 24px 0;
+		border-radius: 8px 16px 8px 16px;
+	}
+
+	&__slide {
+		display: flex;
+		align-items: center;
+
+		&__wrapper {
+			transition-timing-function: linear;
+		}
+
+		&__item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include v.mq(lpt) {
+				max-width: 150px;
+				height: 55px;
+				margin-right: 35px;
+			}
+
+			@include v.mq(s) {
+				max-width: 90px;
+				height: 33px;
+				margin-right: 20px;
+			}
+
+			img {
+				display: block;
+				object-fit: cover;
+				object-position: center;
+
+				@include v.mq(lpt) {
+					max-width: 150px;
+					max-height: 55px;
+				}
+
+				@include v.mq(s) {
+					max-width: 90px;
+					max-height: 33px;
+				}
+			}
+		}
+	}
+}
+
+.p-clientList02 {
+	display: grid;
+
+	@include v.mq(lpt) {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px 10px;
+	}
+
+	@include v.mq(s) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px 25px;
+	}
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.p-clientList03 {
+	@include v.mq(lpt) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1px 20px;
+	}
+
+	@include v.mq(s) {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+	}
+
+	&__item {
+		line-height: 2;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(18);
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(16);
+		}
+	}
+}
