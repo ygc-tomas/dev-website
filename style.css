@@ -14,16 +14,21 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   gap: 20px;
 }
 
-/* 列数別 */
-.p-postLayout__contents[data-col="4"] {
+.p-postLayout__contents.p-postLayout--4col {
   grid-template-columns: repeat(4, 1fr);
 }
-.p-postLayout__contents[data-col="2"] {
+
+.p-postLayout__contents.p-postLayout--2col {
   grid-template-columns: repeat(2, 1fr);
 }
-.p-postLayout__contents[data-col="1"] {
+
+.p-postLayout__contents.p-postLayout--1col {
   grid-template-columns: 1fr;
 }
+/* 列数別 */
+
+
+
 
 /* カードの中身を縦並びにしてPDFボタンを下揃え */
 .p-postCard {
@@ -45,4 +50,23 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   .p-postLayout__contents {
     grid-template-columns: 1fr !important;
   }
+}
+.p-postLayout--4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px; /* Adjust as needed */
+}
+
+.p-postLayout--2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px; /* Adjust as needed */
+}
+
+.p-postLayout--1col {
+  display: block; /* Or any other appropriate layout */
+}
+
+.p-postCard {
+  /* Existing styles for post card */
 }

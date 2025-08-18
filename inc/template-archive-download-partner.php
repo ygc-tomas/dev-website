@@ -62,7 +62,21 @@ global $langPath;
                                                                 <ul class="p-postSort__category">
                                                                         <?php foreach ($cats as $cat): ?>
                                                                                 <li class="p-postSort__category__item">
-                                                                                        <a href="<?php echo get_term_link($cat); ?>" class="p-postSort__category__link"><?php echo $cat->name; ?></a>
+                                                                                        <?php
+                                                                                        $taxonomy = '';
+                                                                                        switch ($langClass) {
+                                                                                            case 'ja':
+                                                                                                $taxonomy = 'document_cat';
+                                                                                                break;
+                                                                                            case 'en':
+                                                                                                $taxonomy = 'document-en_cat';
+                                                                                                break;
+                                                                                            case 'th':
+                                                                                                $taxonomy = 'document-th_cat';
+                                                                                                break;
+                                                                                        }
+                                                                                        ?>
+                                                                                        <a href="<?php echo get_term_link($cat->term_id, $taxonomy); ?>" class="p-postSort__category__link"><?php echo $cat->name; ?></a>
                                                                                 </li>
                                                                         <?php endforeach; ?>
                                                                 </ul>
@@ -97,7 +111,21 @@ global $langPath;
                                                                         <ul class="p-postSort02__category">
                                                                                 <?php foreach ($cats as $cat): ?>
                                                                                         <li class="p-postSort02__category__item">
-                                                                                                <a href="<?php echo get_term_link($cat); ?>" class="p-postSort__category__link"><?php echo $cat->name; ?></a>
+                                                                                                <?php
+                                                                                                $taxonomy = '';
+                                                                                                switch ($langClass) {
+                                                                                                    case 'ja':
+                                                                                                        $taxonomy = 'document_cat';
+                                                                                                        break;
+                                                                                                    case 'en':
+                                                                                                        $taxonomy = 'document-en_cat';
+                                                                                                        break;
+                                                                                                    case 'th':
+                                                                                                        $taxonomy = 'document-th_cat';
+                                                                                                        break;
+                                                                                                }
+                                                                                                ?>
+                                                                                                <a href="<?php echo get_term_link($cat->term_id, $taxonomy); ?>" class="p-postSort__category__link"><?php echo $cat->name; ?></a>
                                                                                         </li>
                                                                                 <?php endforeach; ?>
                                                                         </ul>
@@ -129,7 +157,11 @@ global $langPath;
 
                         <div class="p-tab__body">
                                 <?php if (have_posts()): ?>
-                                        <div class="p-postLayout">
+                                        <?php
+$col = isset($_GET['col']) ? intval($_GET['col']) : 2; // Default to 2 columns
+$col_class = 'p-postLayout--' . $col . 'col';
+?>
+<div class="p-postArchive03 p-postLayout__contents <?php echo $col_class; ?>">
                                                 <div class="p-postLayout__head">
                                                         <p class="p-postLayout__heading">
                                                                 <?php switch ($langClass) {
