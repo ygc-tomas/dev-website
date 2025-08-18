@@ -29,16 +29,16 @@ if (is_tax('solution-th_cat') || is_tax('solution-th_challenges') || is_tax('sol
         exit;
 endif;
 
-if (is_tax('download-partner_cat') || is_tax('download-partner_lang') || get_post_type('document')) :
+if (is_tax('download-partner_cat') || is_tax('download-partner_lang') || get_post_type('download-partner')) :
         include(TEMPLATEPATH . '/archive-download-partner.php');
         exit;
 endif;
-if (is_tax('download-partner-en_cat') || is_tax('download-partner-en_lang') || get_post_type('document-en')) :
+if (is_tax('download-partner-en_cat') || is_tax('download-partner-en_lang') || get_post_type('download-partner-en')) :
         include(TEMPLATEPATH . '/archive-download-partner-en.php');
         exit;
 endif;
 
-if (is_tax('download-partner-th_cat') || is_tax('download-partner-th_lang') || get_post_type('document-th')) :
+if (is_tax('download-partner-th_cat') || is_tax('download-partner-th_lang') || get_post_type('download-partner-th')) :
         include(TEMPLATEPATH . '/archive-download-partner-th.php');
         exit;
 endif;

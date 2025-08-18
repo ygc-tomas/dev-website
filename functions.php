@@ -1465,7 +1465,7 @@ $labels = array(
                 array(
                         'hierarchical' => true, /* 親子関係が必要なければ false */
                         'update_count_callback' => '_update_post_term_count',
-                        'label' => 'ダウンロードパートナー（日）',
+                        'label' => 'ダウンロードパートナーカテゴリー（日）',
                         'public' => true,
                         'show_ui' => true,
                         'show_in_rest' => true,
@@ -1477,7 +1477,7 @@ $labels = array(
                 array(
                         'hierarchical' => true, /* 親子関係が必要なければ false */
                         'update_count_callback' => '_update_post_term_count',
-                        'label' => 'ダウンロードパートナー（日）',
+                        'label' => 'ダウンロードパートナー言語（日）',
                         'public' => true,
                         'show_ui' => true,
                         'show_in_rest' => true,
@@ -1527,7 +1527,7 @@ $labels = array(
                 array(
                         'hierarchical' => true, /* 親子関係が必要なければ false */
                         'update_count_callback' => '_update_post_term_count',
-                        'label' => 'ダウンロードパートナー（英）',
+                        'label' => 'ダウンロードパートナーカテゴリー（英）',
                         'public' => true,
                         'show_ui' => true,
                         'show_in_rest' => true,
@@ -1539,7 +1539,7 @@ $labels = array(
                 array(
                         'hierarchical' => true, /* 親子関係が必要なければ false */
                         'update_count_callback' => '_update_post_term_count',
-                        'label' => 'ダウンロードパートナー（英）',
+                        'label' => 'ダウンロードパートナー言語（英）',
                         'public' => true,
                         'show_ui' => true,
                         'show_in_rest' => true,
@@ -1588,7 +1588,7 @@ $labels = array(
                 array(
                         'hierarchical' => true, /* 親子関係が必要なければ false */
                         'update_count_callback' => '_update_post_term_count',
-                        'label' => 'ダウンロードパートナー（タイ）',
+                        'label' => 'ダウンロードパートナーカテゴリー（タイ）',
                         'public' => true,
                         'show_ui' => true,
                         'show_in_rest' => true,
@@ -1600,7 +1600,7 @@ $labels = array(
                 array(
                         'hierarchical' => true, /* 親子関係が必要なければ false */
                         'update_count_callback' => '_update_post_term_count',
-                        'label' => 'ダウンロードパートナー（タイ）',
+                        'label' => 'ダウンロードパートナー言語（タイ）',
                         'public' => true,
                         'show_ui' => true,
                         'show_in_rest' => true,
