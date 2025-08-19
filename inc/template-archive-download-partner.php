@@ -18,6 +18,10 @@ global $langPath;
                                                         $cats = get_terms('download-partner-th_cat');
                                                         break;
                                         }
+
+                                        echo '<pre>';
+                                        var_dump($cats);
+                                        echo '</pre>';
                                         if ($cats): ?>
                                                 <button type="button" class="p-postSort__button">
                                                         <span class="icon">
