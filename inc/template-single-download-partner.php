@@ -101,7 +101,7 @@ global $langPath; ?>
                                                                         <p class="u-text--16 u-align--c">
                                                                                 <?php switch ($langClass) {
                                                                                         case 'ja': ?>
-                                                                                                Download the partner information using the button below.
+                                                                                                下記のボタンを押してダウンロードしてください。
                                                                                         <?php break;
                                                                                         case 'en': ?>
                                                                                                 Please download using the button below.
@@ -129,7 +129,7 @@ global $langPath; ?>
                                                                                 <a href="<?php echo esc_url($download_url); ?>" download class="c-button02 --center">
                                                                                 <?php switch ($langClass) {
                                                                                         case 'ja': ?>
-                                                                                        Download Partner Information
+                                                                                        ダウンロード
                                                                                         <?php break;
                                                                                         case 'en': ?>
                                                                                         Download

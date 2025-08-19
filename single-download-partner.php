@@ -7,7 +7,7 @@ $langPath = home_url(); ?>
 <section class="p-lowerMv">
         <div class="p-lowerMv__inner">
                 <p class="p-lowerMv__heading">
-                        Document Download
+                        ダウンロードパートナー
                 </p>
                 <nav class="p-lowerMv__bread">
                         <ul class="p-lowerMv__bread__list">
@@ -15,10 +15,10 @@ $langPath = home_url(); ?>
                                         <a href="<?php echo $langPath; ?>/">TOP</a>
                                 </li>
                                 <li class="p-lowerMv__bread__list__item">
-                                        <a href="<?php echo $langPath; ?>">Document List</a>
+                                        <a href="<?php echo $langPath; ?>">ダウンロードリスト</a>
                                 </li>
                                 <li class="p-lowerMv__bread__list__item">
-                                        <span>Document Download</span>
+                                        <span>ファイルダウンロード</span>
                                 </li>
                         </ul>
                 </nav>
