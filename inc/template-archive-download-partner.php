@@ -268,7 +268,7 @@ global $langPath;
                                                                                                 $cats = get_the_terms($post->ID, 'download-partner-en_cat');
                                                                                                 break;
                                                                                         case "th":
-                                                                                                $cats = get_the_terms($post->ID, 'download-f-th_cat');
+                                                                                                $cats = get_the_terms($post->ID, 'download-partner-th_cat');
                                                                                                 break;
                                                                                 }
                                                                                 if ($cats): ?>
