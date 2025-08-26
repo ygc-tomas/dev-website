@@ -707,6 +707,23 @@ post
 			display: none;
 		}
 	}
+
+	&__downloads {
+		margin-top: auto;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+		padding-top: 15px;
+
+		@include v.mq(s) {
+			gap: 6px;
+			padding-top: 12px;
+		}
+
+		.c-button02 {
+			margin: 0;
+		}
+	}
 }
 
 .p-postArticle {
