@@ -30,15 +30,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
 }
+
+.p-postCard__link {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
 .p-postCard__body {
   display: flex;
   flex-direction: column;
   flex: 1;
-}
-.p-postCard__body a[target="_blank"] {
-  align-self: flex-start; /* 左寄せ */
-  margin-top: auto;       /* 下に寄せる */
+  padding: 35px 20px 20px;
 }
 
 /* ダウンロードボタンエリア */
@@ -47,7 +56,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-top: 15px;
+  padding: 0 20px 20px;
 }
 
 .p-postCard__downloads .c-button02 {
@@ -64,15 +73,73 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   background-size: 12px auto;
 }
 
+/* 1列表示時のスタイル */
+.p-postLayout__contents[data-col="1"] .p-postCard {
+  flex-direction: row;
+}
+
+.p-postLayout__contents[data-col="1"] .p-postCard__link {
+  flex-direction: row;
+  width: 100%;
+}
+
+.p-postLayout__contents[data-col="1"] .p-postCard__thumbnail {
+  width: 450px;
+  flex-shrink: 0;
+}
+
+.p-postLayout__contents[data-col="1"] .p-postCard__body {
+  width: calc(100% - 450px);
+  padding: 35px 30px 20px;
+}
+
+.p-postLayout__contents[data-col="1"] .p-postCard__downloads {
+  padding: 0 30px 20px;
+}
+
+/* 4列表示時のスタイル */
+.p-postLayout__contents[data-col="4"] .p-postCard__body {
+  padding: 24px 20px 20px;
+}
+
+.p-postLayout__contents[data-col="4"] .p-postCard__downloads {
+  padding: 0 20px 20px;
+}
+
+.p-postLayout__contents[data-col="4"] .p-postCard__category {
+  display: none;
+}
+
+.p-postLayout__contents[data-col="4"] .p-postCard__text {
+  display: none;
+}
+
 /* モバイルは自動1列 */
 @media (max-width: 768px) {
   .p-postLayout__contents {
     grid-template-columns: 1fr !important;
   }
   
+  .p-postCard {
+    flex-direction: column !important;
+  }
+  
+  .p-postCard__link {
+    flex-direction: column !important;
+  }
+  
+  .p-postCard__thumbnail {
+    width: 100% !important;
+  }
+  
+  .p-postCard__body {
+    width: 100% !important;
+    padding: 16px 15px 20px !important;
+  }
+  
   .p-postCard__downloads {
     gap: 6px;
-    padding-top: 12px;
+    padding: 0 15px 20px !important;
   }
   
   .p-postCard__downloads .c-button02 {

@@ -381,21 +381,20 @@ if (postLayout[0]) {
 			// });
 		}
 
-		// const buttons = el.querySelectorAll(".p-postLayout__button__item");
-		// const target = el.querySelector(".p-postLayout__contents");
-		// buttons.forEach((button) => {
-		// 	button.addEventListener("click", () => {
-		// 		const currentButton = el.querySelector(
-		// 			".p-postLayout__button__item.--current"
-		// 		);
-		// 		const colNumber = button.dataset.col;
-		// 		if (button != currentButton) {
-		// 			currentButton.classList.remove("--current");
-		// 			button.classList.add("--current");
-		// 			target.dataset.col = colNumber;
-		// 		}
-		// 	});
-		// });
+		// 列数変更ボタンのクリックイベント
+		buttons.forEach((button) => {
+			button.addEventListener("click", () => {
+				const currentButton = el.querySelector(
+					".p-postLayout__button__item.--current"
+				);
+				const colNumber = button.dataset.col;
+				if (button != currentButton) {
+					currentButton.classList.remove("--current");
+					button.classList.add("--current");
+					target.dataset.col = colNumber;
+				}
+			});
+		});
 	});
 }
 

@@ -713,16 +713,47 @@ post
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px;
-		padding-top: 15px;
+		padding: 0 20px 20px;
 
 		@include v.mq(s) {
 			gap: 6px;
-			padding-top: 12px;
+			padding: 0 15px 20px;
 		}
 
 		.c-button02 {
 			margin: 0;
+			font-size: 0.875rem;
+			padding: 8px 16px;
+			min-height: 36px;
+
+			@include v.mq(s) {
+				font-size: 0.8rem;
+				padding: 6px 12px;
+				min-height: 32px;
+			}
+
+			&::after {
+				width: 24px;
+				height: 24px;
+				right: 8px;
+				background-size: 12px auto;
+
+				@include v.mq(s) {
+					width: 20px;
+					height: 20px;
+					right: 6px;
+					background-size: 10px auto;
+				}
+			}
 		}
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		text-decoration: none;
+		color: inherit;
 	}
 }
 
