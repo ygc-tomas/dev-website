@@ -76,6 +76,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* 1列表示時のスタイル */
 .p-postLayout__contents[data-col="1"] .p-postCard {
   flex-direction: row;
+  position: relative;
+  min-height: 200px;
 }
 
 .p-postLayout__contents[data-col="1"] .p-postCard__link {
@@ -90,11 +92,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .p-postLayout__contents[data-col="1"] .p-postCard__body {
   width: calc(100% - 450px);
-  padding: 35px 30px 20px;
+  padding: 35px 30px 60px;
 }
 
 .p-postLayout__contents[data-col="1"] .p-postCard__downloads {
   padding: 0 30px 20px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: calc(100% - 450px);
 }
 
 /* 4列表示時のスタイル */
@@ -122,6 +128,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   
   .p-postCard {
     flex-direction: column !important;
+    min-height: auto !important;
+    position: relative !important;
   }
   
   .p-postCard__link {
@@ -140,6 +148,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   .p-postCard__downloads {
     gap: 6px;
     padding: 0 15px 20px !important;
+    position: static !important;
+    width: 100% !important;
   }
   
   .p-postCard__downloads .c-button02 {

@@ -720,6 +720,15 @@ post
 			padding: 0 15px 20px;
 		}
 
+		// 1列表示時のダウンロードボタン位置
+		.p-postLayout__contents[data-col="1"] & {
+			position: absolute;
+			bottom: 20px;
+			right: 0;
+			width: calc(100% - 450px);
+			padding: 0 30px 20px;
+		}
+
 		.c-button02 {
 			margin: 0;
 			font-size: 0.875rem;
