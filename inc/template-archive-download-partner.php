@@ -250,104 +250,51 @@ global $langPath;
 						</div>
 						<div class="p-postArchive03 p-postLayout__contents">
 							<?php while (have_posts()): the_post(); ?>
-								<div class="p-postCard">
-									<a href="<?php the_permalink(); ?>" class="p-postCard__link">
-										<div class="p-postCard__thumbnail">
-											<?php if (get_the_post_thumbnail()): ?>
-												<?php the_post_thumbnail('large'); ?>
-											<?php else: ?>
-												<img src="<?php echo get_template_directory_uri(); ?>/ogimage.png" alt="">
-											<?php endif; ?>
-										</div>
-										<div class="p-postCard__body">
-											<?php
-											switch ($langClass) {
-												case "ja":
-													$cats = get_the_terms($post->ID, 'download-partner_cat');
-													break;
-												case "en":
-													$cats = get_the_terms($post->ID, 'download-partner-en_cat');
-													break;
-												case "th":
-													$cats = get_the_terms($post->ID, 'download-partner-th_cat');
-													break;
-											}
-											if ($cats): ?>
-												<ul class="p-postCard__category --noMt">
-													<?php foreach ($cats as $cat): ?>
-														<li class="p-postCard__category__item">
-															<?php echo $cat->name; ?>
-														</li>
-													<?php endforeach; ?>
-												</ul>
-											<?php endif; ?>
-											<h3 class="p-postCard__heading --hasMt">
-												<?php the_title(); ?>
-											</h3>
-											<p class="p-postCard__text">
-												<?php
-												if (mb_strlen($post->post_content, 'UTF-8') > 180) {
-													$content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 180, 'UTF-8'));
-													echo $content . '…';
-												} else {
-													echo str_replace('\n', '', strip_tags($post->post_content));
-												}
-												?>
-											</p>
-										</div>
-									</a>
-									
-									<!-- ダウンロードリンク -->
-									<div class="p-postCard__downloads">
-										<?php if (get_post_meta(get_the_ID(), 'cf_file', true)): ?>
-											<a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'cf_file', true)); ?>" download class="c-button02 --small" target="_blank">
-												<?php switch ($langClass) {
-													case 'ja': ?>
-														PDF
-													<?php break;
-													case 'en': ?>
-														PDF
-													<?php break;
-													case 'th': ?>
-														PDF
-												<?php break;
-												} ?>
-											</a>
-										<?php endif; ?>
-										
-										<?php if (get_post_meta(get_the_ID(), 'cf_excel_file', true)): ?>
-											<a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'cf_excel_file', true)); ?>" download class="c-button02 --small" target="_blank">
-												<?php switch ($langClass) {
-													case 'ja': ?>
-														Excel
-													<?php break;
-													case 'en': ?>
-														Excel
-													<?php break;
-													case 'th': ?>
-														Excel
-												<?php break;
-												} ?>
-											</a>
-										<?php endif; ?>
-										
-										<?php if (get_post_meta(get_the_ID(), 'cf_powerpoint_file', true)): ?>
-											<a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'cf_powerpoint_file', true)); ?>" download class="c-button02 --small" target="_blank">
-												<?php switch ($langClass) {
-													case 'ja': ?>
-														PowerPoint
-													<?php break;
-													case 'en': ?>
-														PowerPoint
-													<?php break;
-													case 'th': ?>
-														PowerPoint
-												<?php break;
-												} ?>
-											</a>
+								<a href="<?php the_permalink(); ?>" class="p-postCard">
+									<div class="p-postCard__thumbnail">
+										<?php if (get_the_post_thumbnail()): ?>
+											<?php the_post_thumbnail('large'); ?>
+										<?php else: ?>
+											<img src="<?php echo get_template_directory_uri(); ?>/ogimage.png" alt="">
 										<?php endif; ?>
 									</div>
-								</div>
+									<div class="p-postCard__body">
+										<?php
+										switch ($langClass) {
+											case "ja":
+												$cats = get_the_terms($post->ID, 'download-partner_cat');
+												break;
+											case "en":
+												$cats = get_the_terms($post->ID, 'download-partner-en_cat');
+												break;
+											case "th":
+												$cats = get_the_terms($post->ID, 'download-partner-th_cat');
+												break;
+										}
+										if ($cats): ?>
+											<ul class="p-postCard__category --noMt">
+												<?php foreach ($cats as $cat): ?>
+													<li class="p-postCard__category__item">
+														<?php echo $cat->name; ?>
+													</li>
+												<?php endforeach; ?>
+											</ul>
+										<?php endif; ?>
+										<h3 class="p-postCard__heading --hasMt">
+											<?php the_title(); ?>
+										</h3>
+										<p class="p-postCard__text">
+											<?php
+											if (mb_strlen($post->post_content, 'UTF-8') > 180) {
+												$content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 180, 'UTF-8'));
+												echo $content . '…';
+											} else {
+												echo str_replace('\n', '', strip_tags($post->post_content));
+											}
+											?>
+										</p>
+									</div>
+								</a>
 							<?php endwhile; ?>
 						</div>
 						<div class="p-pagination u-mt--25 u-mt--18--sp">
