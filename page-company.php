@@ -141,13 +141,15 @@ if (is_ancestor('en')) {
 							<dd>
 								<?php switch ($langClass) {
 									case 'ja': ?>
-										Self-development and Value provision　自己成長と価値提供
+										“Genba” Productivity, Maximized by Technology<br>
+										テクノロジーの力で、”Genba”の生産性を最大化する
 									<?php break;
 									case 'en': ?>
-										Self-development and Value provision　自己成長と価値提供
+										“Genba” Productivity, Maximized by Technology
 									<?php break;
 									case 'th': ?>
-										Self-development and Value provision　自己成長と価値提供
+										“Genba” Productivity, Maximized by Technology<br>
+										เทคโนโลยีเพื่อการยกระดับประสิทธิภาพสูงสุดของ “หน้างาน”
 								<?php break;
 								} ?>
 							</dd>
@@ -169,13 +171,15 @@ if (is_ancestor('en')) {
 							<dd>
 								<?php switch ($langClass) {
 									case 'ja': ?>
-										Win with ”Genba”　現場と勝つ
+										A technology partner chosen by the "Genba"<br>
+										“Genba"から選ばれるテクノロジー企業へ
 									<?php break;
 									case 'en': ?>
-										Win with ”Genba”　現場と勝つ
+										A technology partner chosen by the "Genba"<br>
 									<?php break;
 									case 'th': ?>
-										Win with ”Genba”　現場と勝つ
+										A technology partner chosen by the "Genba"<br>
+										พาร์ทเนอร์ด้านเทคโนโลยีที่ “หน้างาน” ไว้วางใจเลือกใช้
 								<?php break;
 								} ?>
 							</dd>
@@ -197,13 +201,28 @@ if (is_ancestor('en')) {
 							<dd>
 								<?php switch ($langClass) {
 									case 'ja': ?>
-										Let’s Go Digital
+										【Tomas Way - 5つの行動指針】<br>
+										Keeping Promises – 約束を守る<br>
+										Strive for Success – 成果のために努力する<br>
+										Top of View – 会社の代表として行動する <br>
+										Common Success – 成功はみんなのもの<br>
+										Team work - 成果のためチームで協力をする<br>
 									<?php break;
 									case 'en': ?>
-										Let’s Go Digital
+										【Tomas Way - 5 Principles of Action】<br>
+										Keeping Promises – Always keep your promises<br>
+										Strive for Success – Always aim for success<br>
+										Top of View – Act as a representative of the company<br>
+										Common Success – Success is for everyone<br>
+										Team work – Collaborate as a team for success<br>
 									<?php break;
 									case 'th': ?>
-										Let’s Go Digital
+										【Tomas Way - 5 หลักการปฏิบัติ】<br>
+										Keeping Promises – การรักษาสัญญา<br>
+										Strive for Success - มุ่งมั่นสู่ความสำเร็จ<br>
+										Top of View - ปฏิบัติในฐานะตัวแทนบริษัท<br>
+										Common Success - ความสำเร็จเป็นของทุกคน<br>
+										Team work - ทำงานเป็นทีมเพื่อความสำเร็จ<br>
 								<?php break;
 								} ?>
 							</dd>

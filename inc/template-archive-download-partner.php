@@ -282,22 +282,31 @@ global $langPath;
                                                                                 <?php endif; ?>
                                                                                 <h3 class="p-postCard__heading --hasMt">
                                                                                         <?php the_title(); ?>
-                                                                                                                                                                </h3>
+                                                                                </h3>
                                                                                 <p class="p-postCard__text">
-                                                                                <!-- PDFダウンロードボタン追加 -->
-                                                                                <?php if ( get_post_meta( get_the_ID(), 'cf_file', true ) ) : ?> 
-                                                                                        <a href="<?php echo esc_url( get_permalink() ); ?>" class="download-button">PDF</a><br>
-                                                                                <?php endif; ?>
+                                                                                        											<?php
+											if (mb_strlen($post->post_content, 'UTF-8') > 180) {
+												$content = str_replace('\n', '', mb_substr(strip_tags($post->post_content), 0, 180, 'UTF-8'));
+												echo $content . '…';
+											} else {
+												echo str_replace('\n', '', strip_tags($post->post_content));
+											}
+											?>
+                                                                                                
+                                                                                        <!-- PDFダウンロードボタン追加 -->
+                                                                                        <?php if ( get_post_meta( get_the_ID(), 'cf_file', true ) ) : ?> 
+                                                                                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="download-button">PDF</a><br>
+                                                                                        <?php endif; ?>
 
-                                                                                <!-- Excel用ボタン（詳細ページに遷移） -->
-                                                                                <?php if ( get_post_meta( get_the_ID(), 'cf_excel_file', true ) ) : ?> 
-                                                                                        <a href="<?php echo esc_url( get_permalink() . '?type=excel' ); ?>" class="download-button">Excel</a><br>
-                                                                                <?php endif; ?>
+                                                                                        <!-- Excel用ボタン（詳細ページに遷移） -->
+                                                                                        <?php if ( get_post_meta( get_the_ID(), 'cf_excel_file', true ) ) : ?> 
+                                                                                                <a href="<?php echo esc_url( get_permalink() . '?type=excel' ); ?>" class="download-button">Excel</a><br>
+                                                                                        <?php endif; ?>
 
-                                                                                <!-- PowerPoint用ボタン（詳細ページに遷移） -->
-                                                                                <?php if ( get_post_meta( get_the_ID(), 'cf_powerpoint_file', true ) ) : ?> 
-                                                                                        <a href="<?php echo esc_url( get_permalink() . '?type=powerpoint' ); ?>" class="download-button">PowerPoint</a>
-                                                                                <?php endif; ?>
+                                                                                        <!-- PowerPoint用ボタン（詳細ページに遷移） -->
+                                                                                        <?php if ( get_post_meta( get_the_ID(), 'cf_powerpoint_file', true ) ) : ?> 
+                                                                                                <a href="<?php echo esc_url( get_permalink() . '?type=powerpoint' ); ?>" class="download-button">PowerPoint</a>
+                                                                                        <?php endif; ?>
                                                                                 </p>
 
 
