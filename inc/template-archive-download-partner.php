@@ -250,7 +250,7 @@ global $langPath;
 						</div>
 						<div class="p-postArchive03 p-postLayout__contents">
 							<?php while (have_posts()): the_post(); ?>
-								<a href="<?php the_permalink(); ?>" class="p-postCard">
+								<div class="p-postCard">
 									<div class="p-postCard__thumbnail">
 										<?php if (get_the_post_thumbnail()): ?>
 											<?php the_post_thumbnail('large'); ?>
@@ -293,8 +293,25 @@ global $langPath;
 											}
 											?>
 										</p>
+										<div class="p-postCard__downloads">
+											<?php
+											$pdf_url = get_field('cf_file');
+											$excel_url = get_field('cf_excel_file');
+											$powerpoint_url = get_field('cf_powerpoint_file');
+											?>
+											<?php if ($pdf_url): ?>
+												<a href="<?php echo esc_url($pdf_url); ?>" download class="c-downloadButton">PDF</a>
+											<?php endif; ?>
+											<?php if ($excel_url): ?>
+												<a href="<?php echo esc_url($excel_url); ?>" download class="c-downloadButton">Excel</a>
+											<?php endif; ?>
+											<?php if ($powerpoint_url): ?>
+												<a href="<?php echo esc_url($powerpoint_url); ?>" download class="c-downloadButton">Powerpoint</a>
+											<?php endif; ?>
+										</div>
+										<a href="<?php the_permalink(); ?>" class="c-button02">詳細はこちら</a>
 									</div>
-								</a>
+								</div>
 							<?php endwhile; ?>
 						</div>
 						<div class="p-pagination u-mt--25 u-mt--18--sp">

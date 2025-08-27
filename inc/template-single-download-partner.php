@@ -90,3 +90,63 @@ global $langPath; ?>
                                                                         </div>
                                                                 </div>
                                                                 <div class="p-postArticle03__contents">
+                                                                        <h1 class="p-postArticle03__heading">
+                                                                                <?php the_title(); ?>
+                                                                        </h1>
+                                                                        <article class="p-postArticle03__article">
+                                                                                <?php the_content(); ?>
+                                                                        </article>
+                                                                </div>
+                                                                <div class="p-postArticle03__foot">
+                                                                        <p class="u-text--16 u-align--c">
+                                                                                <?php switch ($langClass) {
+                                                                                        case 'ja': ?>
+                                                                                                下記のボタンを押してダウンロードしてください。
+                                                                                        <?php break;
+                                                                                        case 'en': ?>
+                                                                                                Please download using the button below.
+                                                                                        <?php break;
+                                                                                        case 'th': ?>
+                                                                                                กรุณากดดาวน์โหลดจากปุ่มด้านล่าง
+                                                                                <?php break;
+                                                                                } ?>
+                                                                        </p>
+                                                                        <div class="u-mt--20 u-mt--10--sp">
+                                                                                <?php
+                                                                                $type = isset($_GET['type']) ? $_GET['type'] : '';
+                                                                                switch ($type) {
+                                                                                case 'excel':
+                                                                                        $download_url = get_field('cf_excel_file');
+                                                                                        break;
+                                                                                case 'powerpoint':
+                                                                                        $download_url = get_field('cf_powerpoint_file');
+                                                                                        break;
+                                                                                default:
+                                                                                        $download_url = get_field('cf_file');
+                                                                                        break;
+                                                                                }
+                                                                                ?>
+                                                                                <a href="<?php echo esc_url($download_url); ?>" download class="c-button02 --center">
+                                                                                <?php switch ($langClass) {
+                                                                                        case 'ja': ?>
+                                                                                        ダウンロード
+                                                                                        <?php break;
+                                                                                        case 'en': ?>
+                                                                                        Download
+                                                                                        <?php break;
+                                                                                        case 'th': ?>
+                                                                                        ดาวน์โหลด
+                                                                                <?php break;
+                                                                                } ?>
+                                                                                </a>
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                <?php endif; ?>
+                                <?php endwhile;
+                                endif; ?>
+                        </div>
+                </div>
+        </div>
+</section>

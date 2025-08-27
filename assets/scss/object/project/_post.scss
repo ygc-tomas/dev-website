@@ -544,7 +544,8 @@ post
 	// 1列表示時のカード
 	@include v.mq(l) {
 		[data-col="1"] & {
-			flex-direction: row;
+			flex-direction: row; /* 横並びにする */
+			align-items: flex-start; /* 上揃え */
 		}
 	}
 
@@ -564,7 +565,7 @@ post
 
 		@include v.mq(l) {
 			[data-col="1"] & {
-				width: 40.9090909091%;
+				width: 40.9090909091%; /* 幅を40%にする */
 			}
 		}
 	}
@@ -583,7 +584,7 @@ post
 
 		@include v.mq(l) {
 			[data-col="1"] & {
-				width: 50%;
+				width: 50%; /* 幅を50%にする */
 				padding: 35px 30px 35px;
 			}
 		}
@@ -594,6 +595,16 @@ post
 			}
 		}
 	}
+
+  &__downloads {
+    margin-top: 10px; /* 記事本文との間隔 */
+    text-align: left; /* 左寄せ */
+    display: flex; /* 横並びにする */
+    justify-content: flex-start; /* 左寄せ */
+    align-items: center; /* 縦方向中央揃え */
+    gap: 5px; /* ボタン間の間隔 */
+    flex-wrap: wrap; /* 折り返し設定 */
+  }
 }
 
 // 4列表示時の非表示要素
