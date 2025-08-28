@@ -296,12 +296,12 @@ global $langPath;
 										<div class="p-postCard__downloads">
                                                                                         <!-- PDFダウンロードボタン追加 -->
                                                                                         <?php if ( get_post_meta( get_the_ID(), 'cf_file', true ) ) : ?> 
-                                                                                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="download-button">PDF</a><br>
+                                                                                                <a href="<?php echo esc_url( get_permalink() ); ?>" class="download-button">PDF</a>
                                                                                         <?php endif; ?>
 
                                                                                         <!-- Excel用ボタン（詳細ページに遷移） -->
                                                                                         <?php if ( get_post_meta( get_the_ID(), 'cf_excel_file', true ) ) : ?> 
-                                                                                                <a href="<?php echo esc_url( get_permalink() . '?type=excel' ); ?>" class="download-button">Excel</a><br>
+                                                                                                <a href="<?php echo esc_url( get_permalink() . '?type=excel' ); ?>" class="download-button">Excel</a>
                                                                                         <?php endif; ?>
 
                                                                                         <!-- PowerPoint用ボタン（詳細ページに遷移） -->

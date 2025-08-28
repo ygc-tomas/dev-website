@@ -530,10 +530,8 @@ post
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	text-decoration: none;
-	color: inherit;
 
-	@include v.mq(l) {
+	@include v.mq(lpt) {
 		border-radius: 10px;
 	}
 
@@ -541,19 +539,27 @@ post
 		border-radius: 8px;
 	}
 
-	// 1列表示時のカード
-	@include v.mq(l) {
-		[data-col="1"] & {
-			flex-direction: row; /* 横並びにする */
-			align-items: flex-start; /* 上揃え */
+	&:hover {
+		.p-postCard__thumbnail {
+			img {
+				transform: scale(1.05);
+			}
 		}
+	}
+
+	[data-col="1"] & {
+		@include v.mq(lpt) {
+			flex-direction: row;
+		}
+
+		@include v.mq(s) {}
 	}
 
 	&__thumbnail {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		aspect-ratio: 510/320;
+		aspect-ratio: 510 / 320;
 		overflow: hidden;
 		background-color: #ADC3D9;
 
@@ -563,10 +569,12 @@ post
 			object-position: center;
 		}
 
-		@include v.mq(l) {
-			[data-col="1"] & {
-				width: 40.9090909091%; /* 幅を40%にする */
+		[data-col="1"] & {
+			@include v.mq(lpt) {
+				width: calc(450 / 1100 * 100%);
 			}
+
+			@include v.mq(s) {}
 		}
 	}
 
@@ -574,25 +582,129 @@ post
 		background-color: #fff;
 		flex: 1;
 
-		@include v.mq(l) {
-			padding: 35px 20px 35px;
+		@include v.mq(lpt) {
+			padding: 35px 20px 85px;
 		}
 
 		@include v.mq(s) {
 			padding: 16px 15px 32px;
 		}
 
-		@include v.mq(l) {
-			[data-col="1"] & {
-				width: 50%; /* 幅を50%にする */
+		[data-col="1"] & {
+			@include v.mq(lpt) {
+				width: calc(550 / 1100 * 100%);
 				padding: 35px 30px 35px;
 			}
 		}
 
-		@include v.mq(l) {
-			[data-col="4"] & {
+		[data-col="4"] & {
+			@include v.mq(lpt) {
 				padding: 24px 20px 24px;
 			}
+
+			@include v.mq(s) {}
+		}
+	}
+
+	&__heading {
+		font-weight: 600;
+		color: v.$c-tertiary;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(20);
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(16);
+		}
+
+		&.--hasMt {
+			@include v.mq(lpt) {
+				margin-top: 14px;
+			}
+
+			@include v.mq(s) {
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&__date {
+		@include v.f2;
+		font-weight: bold;
+		display: block;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(12);
+
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(10);
+		}
+	}
+
+	&__category {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include v.mq(lpt) {
+			gap: 7px 10px;
+			margin-top: 14px;
+		}
+
+		@include v.mq(s) {
+			gap: 5px 8px;
+			margin-top: 10px;
+		}
+
+		&.--noMt {
+			@include v.mq(lpt) {
+				margin-top: 0;
+			}
+
+			@include v.mq(s) {
+				margin-top: 0;
+			}
+		}
+
+		[data-col="4"] & {
+			display: none;
+		}
+
+		&__item {
+			color: #fff;
+			background-color: v.$c-base;
+			border-radius: 9999px;
+
+			@include v.mq(lpt) {
+				font-size: v.rem(12);
+				padding: 5px 18px;
+			}
+
+			@include v.mq(s) {
+				font-size: v.srem(10);
+				padding: 4px 12px;
+			}
+		}
+	}
+
+	&__text {
+		line-height: 2;
+		letter-spacing: 0.1em;
+
+		@include v.mq(lpt) {
+			font-size: v.rem(14);
+			margin-top: 16px;
+		}
+
+		@include v.mq(s) {
+			font-size: v.srem(12);
+			margin-top: 12px;
+		}
+
+		[data-col="4"] & {
+			display: none;
 		}
 	}
 
@@ -607,14 +719,7 @@ post
   }
 }
 
-// 4列表示時の非表示要素
-[data-col="4"] .p-postCard__category {
-	display: none;
-}
 
-[data-col="4"] .p-postCard__text {
-	display: none;
-}
 
 .p-postArticle {
 	background-color: #fff;
